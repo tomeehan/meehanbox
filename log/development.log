@@ -3140,3 +3140,49 @@ Processing by AssetsController#index as HTML
 Completed 200 OK in 3273ms (Views: 3269.4ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:34:02 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.5ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 1246ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: font-awesome.
+Load paths:
+  /Users/ThomasMeehan/Desktop/storage/app/assets/config
+  /Users/ThomasMeehan/Desktop/storage/app/assets/images
+  /Users/ThomasMeehan/Desktop/storage/app/assets/javascripts
+  /Users/ThomasMeehan/Desktop/storage/app/assets/stylesheets
+  /Users/ThomasMeehan/Desktop/storage/vendor/assets/javascripts
+  /Users/ThomasMeehan/Desktop/storage/vendor/assets/stylesheets
+  /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.2.2/vendor/assets/javascripts
+  /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/rails-assets-tether-1.4.0/app/assets/javascripts
+  /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/rails-assets-tether-1.4.0/app/assets/stylesheets
+  /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actioncable-5.0.1/lib/assets/compiled
+  /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/bootstrap-4.0.0.alpha6/assets/stylesheets
+  /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/bootstrap-4.0.0.alpha6/assets/javascripts
+  /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/bootstrap-4.0.0.alpha6/assets/stylesheets):
+    4:     <title>Storage</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.scss:19
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___3909047245053517064_70133522002020'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (78.5ms)
