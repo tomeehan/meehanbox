@@ -3086,3 +3086,57 @@ Processing by Devise::RegistrationsController#edit as HTML
 Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/users/edit" for 127.0.0.1 at 2017-02-12 17:29:17 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 91ms (Views: 88.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2017-02-12 17:29:37 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 56ms (Views: 54.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2017-02-12 17:30:07 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 77ms (Views: 74.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:30:09 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 75ms (Views: 63.8ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:31:03 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 78ms (Views: 73.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:31:41 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 3273ms (Views: 3269.4ms | ActiveRecord: 0.8ms)
+
+

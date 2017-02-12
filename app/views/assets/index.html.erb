@@ -26,7 +26,13 @@
     </tbody>
   </table>
   <% if current_user.assets.count == 0 %>
-  <p>Hey, <%= current_user.name %> it looks like you don't have any files! Click that blue button above to upload something.</p>
+  <div class="no-files">
+    <p>
+      Hey, <%= current_user.name %> it looks like you don't have any files! 
+      <br>
+      Click that blue button above to upload something.
+    </p>
+  </div>
   <% end %>
 
 </div>
