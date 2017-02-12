@@ -1,27 +1,27 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Assets</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @assets.each do |asset| %>
+<div class="card-header">
+  <%= link_to 'Upload File', new_asset_path, class: 'btn btn-primary' %>
+</div>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td><%= asset.user_id %></td>
-        <td><%= link_to 'Show', asset %></td>
-        <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
-        <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Asset ID</th>
+        <th>File Name</th>
+        <th>Uploaded At</th>
+        <th>Delete</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @assets.each do |asset| %>
+        <tr>
+          <td><%= asset.user_id %></td>
+          <td><%= link_to 'Show', asset %></td>
+          <td><%= asset.uploaded_file_updated_at %></td>
+          <td><%= link_to 'Delete', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<br>
-
-<%= link_to 'New Asset', new_asset_path %>

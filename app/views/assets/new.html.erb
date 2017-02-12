@@ -1,5 +1,7 @@
-<h1>New Asset</h1>
+<div class="card-header">
+	Upload File
+</div>
 
 <%= render 'form', asset: @asset %>
 
-<%= link_to 'Back', assets_path %>
+<div class="card-footer"><%= link_to 'Back', assets_path, class: 'btn btn-secondary' %></div>

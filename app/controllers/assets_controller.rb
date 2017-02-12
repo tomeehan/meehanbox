@@ -26,11 +26,11 @@ class AssetsController < ApplicationController
   # POST /assets
   # POST /assets.json
   def create
-    @asset = current_user.assets.new(params[:asset])
+    @asset = current_user.assets.new(asset_params)
 
     respond_to do |format|
       if @asset.save
-        format.html { redirect_to @asset, notice: 'Asset was successfully created.' }
+        format.html { redirect_to assets_path, notice: 'Asset was successfully created.' }
         format.json { render :show, status: :created, location: @asset }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class AssetsController < ApplicationController
   def update
     respond_to do |format|
       if @asset.update(asset_params)
-        format.html { redirect_to @asset, notice: 'Asset was successfully updated.' }
+        format.html { redirect_to assets_path, notice: 'Asset was successfully updated.' }
         format.json { render :show, status: :ok, location: @asset }
       else
         format.html { render :edit }
@@ -71,6 +71,6 @@ class AssetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def asset_params
-      params.require(:asset).permit(:user_id)
+      params.require(:asset).permit(:user_id, :uploaded_file_file_name, :uploaded_file_content_type, :uploaded_file_file_size, :uploaded_file_updated_at, :uploaded_file)
     end
 end

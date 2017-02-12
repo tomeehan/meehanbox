@@ -36,9 +36,11 @@
 	<br>
 	<br>
 	<br>
-    <div class="<% if user_signed_in? %>card<% end %> container">
-    	<%= yield %>
-   	</div>
+    <div class="container">
+    	<div class="<% if user_signed_in? %>card<% end %>">
+    		<%= yield %>
+    	   	</div>
+    </div>
 
   </body>
 </html>
