@@ -2154,3 +2154,48 @@ Processing by AssetsController#new as HTML
 Completed 200 OK in 90ms (Views: 84.1ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-12 16:23:03 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (1.2ms)
+  Rendered assets/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 91ms (Views: 84.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-12 16:23:28 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (1.2ms)
+  Rendered assets/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 65ms (Views: 60.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-12 16:23:59 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (1.5ms)
+  Rendered assets/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 76ms (Views: 70.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-12 16:24:16 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (1.1ms)
+  Rendered assets/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 57ms (Views: 51.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-12 16:25:15 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (1.3ms)
+  Rendered assets/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 64ms (Views: 56.9ms | ActiveRecord: 0.6ms)
+
+
