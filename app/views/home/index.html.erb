@@ -5,7 +5,8 @@
   <hr class="my-4">
   <p>Dropbox, please don't sue.</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Sign up</a>  <a class="btn btn-secondary btn-lg" href="#" role="button">Log in</a>
+    <%= link_to "Log in", new_user_session_path, class: 'btn btn-primary btn-lg' %>
+    <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-secondary btn-lg' %>
   </p>
 </div>
 <div class="row">
@@ -47,7 +48,8 @@ My Files
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>File Name</th>
+        <th>Name</th>
+        <th>Size</th>
         <th>Uploaded At</th>
         <th>Download</th>
         <th>Delete</th>
@@ -57,6 +59,9 @@ My Files
       <% @assets.each do |asset| %>
         <tr>
           <td><%= link_to asset.uploaded_file_file_name, asset.uploaded_file.url %></td>
+          <td>
+            <%= asset.uploaded_file_file_size %>
+          </td>
           <td><%= asset.uploaded_file_updated_at %></td>
           <td>
             <%= link_to download_url(asset) do %>
