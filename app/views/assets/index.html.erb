@@ -9,6 +9,7 @@
         <th>Asset ID</th>
         <th>File Name</th>
         <th>Uploaded At</th>
+        <th>Download</th>
         <th>Delete</th>
       </tr>
     </thead>
@@ -16,8 +17,9 @@
       <% @assets.each do |asset| %>
         <tr>
           <td><%= asset.user_id %></td>
-          <td><%= link_to 'Show', asset %></td>
+          <td><%= link_to asset.uploaded_file_file_name, asset.uploaded_file.url %></td>
           <td><%= asset.uploaded_file_updated_at %></td>
+          <td><%= link_to asset.file_name, download_url(asset) %></td>
           <td><%= link_to 'Delete', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
