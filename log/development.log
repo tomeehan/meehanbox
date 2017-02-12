@@ -4538,3 +4538,45 @@ Processing by AssetsController#index as HTML
 Completed 200 OK in 80ms (Views: 73.7ms | ActiveRecord: 1.2ms)
 
 
+Started DELETE "/asset/11" for 127.0.0.1 at 2017-02-12 20:52:40 +0000
+Processing by AssetsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cfTYSQmyddo7Wn/S99zK4nrJXIl2YZXjcReq51tFdSIV7rDbmh6UmaHBpXMIwAv98dJNhA8IcF4W97dyffEs7g==", "id"=>"11"}
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.8ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 11]]
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+[paperclip] deleting assets/11/Minibarra-Chef-Favicon.png
+Redirected to http://localhost:3000/asset
+Completed 302 Found in 509ms (ActiveRecord: 19.0ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:52:41 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 55ms (Views: 49.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:52:45 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 77ms (Views: 70.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:53:36 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 73ms (Views: 66.4ms | ActiveRecord: 1.9ms)
+
+
