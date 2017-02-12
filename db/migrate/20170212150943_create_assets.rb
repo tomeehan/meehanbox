@@ -4,7 +4,6 @@ class CreateAssets < ActiveRecord::Migration[5.0]
       t.integer :user_id
 
       t.timestamps
-      add_index :assets, :user_id
     end
   end
 end

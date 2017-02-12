@@ -4,27 +4,29 @@ class AssetsController < ApplicationController
   # GET /assets
   # GET /assets.json
   def index
-    @assets = Asset.all
+    @assets = current_user.assets
   end
 
   # GET /assets/1
   # GET /assets/1.json
   def show
+    @asset = current_user.assets.find(params[:id])
   end
 
   # GET /assets/new
   def new
-    @asset = Asset.new
+    @asset = current_user.assets.new
   end
 
   # GET /assets/1/edit
   def edit
+    @asset = current_user.assets.find(params[:id]) 
   end
 
   # POST /assets
   # POST /assets.json
   def create
-    @asset = Asset.new(asset_params)
+    @asset = current_user.assets.new(params[:asset])
 
     respond_to do |format|
       if @asset.save
