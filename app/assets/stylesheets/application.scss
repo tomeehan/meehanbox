@@ -48,6 +48,12 @@ nav .navbar-brand {
 	height: 50px;
 }
 
+.card {
+  margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
+
 .btn-primary {
 	color: white !important;
 }
@@ -55,4 +61,12 @@ nav .navbar-brand {
 .no-files {
 	text-align: center;
 	padding: 50px 0;
+}
+
+.features {
+
+}
+
+.features h2 {
+	margin-bottom: 25px;
 }

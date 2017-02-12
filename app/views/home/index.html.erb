@@ -1,1 +1,96 @@
-Home Index View
+<% unless user_signed_in? %>
+<div class="jumbotron">
+  <h1 class="display-6">Welcome to MeehanBox</h1>
+  <p class="lead">Simple cloud storage for Meehan's worldwide.</p>
+  <hr class="my-4">
+  <p>Dropbox, please don't sue.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Sign up</a>  <a class="btn btn-secondary btn-lg" href="#" role="button">Log in</a>
+  </p>
+</div>
+<div class="row">
+	<div class="col-sm-5 offset-sm-1">
+		<div class="features">
+			<h2>Features</h2>
+			<p>
+				<i class="fa fa-cloud-upload" aria-hidden="true"></i>
+ 				Upload files
+ 			</p>
+			<p>
+				<i class="fa fa-cloud-download" aria-hidden="true"></i>
+				Download files
+			</p>
+			<p>
+				<i class="fa fa-folder" aria-hidden="true"></i>
+				Create folders
+			</p>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="card" style="width: 20rem;">
+		  <div class="card-block">
+		    <h4 class="card-title">MeehanBox on GitHub</h4>
+		    <p class="card-text">MeehanBox was built with Rails 5, using AWS S3, Paperclip, Devise, PostgreSQL and Bootstrap 4 (Alpha).</p>
+		    <a href="http://github.com/tomeehan/storage" class="btn btn-primary"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+		  </div>
+		</div>		
+	</div>		
+	</div>
+
+</div>
+<% else %>
+ 
+<h4 class="card-header">
+My Files
+</h4>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>File Name</th>
+        <th>Uploaded At</th>
+        <th>Download</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @assets.each do |asset| %>
+        <tr>
+          <td><%= link_to asset.uploaded_file_file_name, asset.uploaded_file.url %></td>
+          <td><%= asset.uploaded_file_updated_at %></td>
+          <td>
+            <%= link_to download_url(asset) do %>
+              <i class="fa fa-download "></i> 
+            <% end %>
+          </td>
+          <td>
+            <%= link_to asset, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fa fa-trash "></i> 
+             <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% if current_user.assets.count == 0 %>
+  <div class="no-files">
+    <p>
+      <i class="fa fa-frown-o fa-5x"></i>
+      <br>
+      <br>
+      <br>
+      Hey, <%= current_user.name %> it looks like you don't have any files! 
+      <br>
+      Click that blue button below to upload something.
+    </p>
+  </div>
+  <% end %>
+</div>
+  <div class="card-footer">
+  <%= link_to new_asset_path, class: 'btn btn-primary' do %>
+  <i class="fa fa-upload "></i> Upload file
+  <% end %>
+</div>
+
+
+<% end %>
