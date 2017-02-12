@@ -64,12 +64,20 @@ class AssetsController < ApplicationController
   end
 
   def get 
-    asset = current_user.assets.find_by_id(params[:id]) 
-    if asset 
-      send_file asset.uploaded_file.path, :type => asset.uploaded_file_content_type 
+    asset = current_user.assets.find_by_id(params[:id])
+      
+    if asset
+      #Parse the URL for special characters first before downloading 
+      data = open(URI.parse(URI.encode(asset.uploaded_file.url)))
+      data.to_s
+      #then again, use the "send_data" method to send the above binary "data" as file. 
+      send_data data, :filename => asset.uploaded_file_file_name, :x_sendfile => true
+        
+      #redirect to amazon S3 url which will let the user download the file automatically 
+      #redirect_to asset.uploaded_file.url, :type => asset.uploaded_file_content_type 
     else
-      redirect_to assets_path
       flash[:error] = "Careful now! Those aren't yours."
+      redirect_to root_url 
     end
   end
 

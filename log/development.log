@@ -4055,3 +4055,486 @@ Processing by AssetsController#index as HTML
 Completed 200 OK in 84ms (Views: 79.7ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-02-12 19:28:57 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 673ms (Views: 661.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-12 19:29:01 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 116ms (Views: 98.1ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-12 19:29:03 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ti4+CDcc6+saKxdYRonGULfqkbcSX+p9qcPC0Aprod8HQfoocTJbKjJ1vDFpx7KZQJv0FI9wLRyzxdhKDe/HZQ==", "user"=>{"email"=>"tom.meehan+2@me.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tom.meehan+2@me.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2017-02-12 19:29:03 UTC], ["last_sign_in_at", 2017-02-12 17:56:29 UTC], ["sign_in_count", 3], ["updated_at", 2017-02-12 19:29:03 UTC], ["id", 2]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 204ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-12 19:29:03 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 67ms (Views: 64.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 19:29:05 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (uninitialized constant Asset::Rails_ROOT):
+  
+app/models/asset.rb:9:in `<class:Asset>'
+app/models/asset.rb:1:in `<top (required)>'
+app/controllers/assets_controller.rb:7:in `index'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.8ms)
+Started GET "/" for 127.0.0.1 at 2017-02-12 19:29:42 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 89.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-12 20:02:34 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 161ms (Views: 147.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:02:50 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.4ms)
+
+
+  
+NameError (uninitialized constant Asset::Rails_ROOT):
+  
+app/models/asset.rb:9:in `<class:Asset>'
+app/models/asset.rb:1:in `<top (required)>'
+app/controllers/assets_controller.rb:7:in `index'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.8ms)
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:04:38 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.7ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 153ms (Views: 109.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-12 20:04:40 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (37.2ms)
+  Rendered assets/new.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 186ms (Views: 141.7ms | ActiveRecord: 18.2ms)
+
+
+Started POST "/asset" for 127.0.0.1 at 2017-02-12 20:04:46 +0000
+Processing by AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sA4NYXpj+IziNVBobtFRvWd2n55loG/gGRQnT193Uogipo5o2gJsVc1kjIBXWBTZ2KjMzEKt37zwU5xmM/gGoQ==", "asset"=>{"uploaded_file"=>#<ActionDispatch::Http::UploadedFile:0x007fdec85f1208 @tempfile=#<Tempfile:/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/RackMultipart20170212-82588-1ua4ah0.png>, @original_filename="Minibarra-Chef-Favicon.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[uploaded_file]\"; filename=\"Minibarra-Chef-Favicon.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Upload"}
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/930bca0fb4556675445cdbafaf7c859020170212-82588-11t37f0.png'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/930bca0fb4556675445cdbafaf7c859020170212-82588-u3ad2x.png'
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "assets" ("user_id", "created_at", "updated_at", "uploaded_file_file_name", "uploaded_file_content_type", "uploaded_file_file_size", "uploaded_file_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 2], ["created_at", 2017-02-12 20:04:46 UTC], ["updated_at", 2017-02-12 20:04:46 UTC], ["uploaded_file_file_name", "Minibarra-Chef-Favicon.png"], ["uploaded_file_content_type", "image/png"], ["uploaded_file_file_size", 1197], ["uploaded_file_updated_at", 2017-02-12 20:04:46 UTC]]
+[paperclip] saving assets/7/Minibarra-Chef-Favicon.png
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 3402ms (ActiveRecord: 10.6ms)
+
+
+  
+Aws::Errors::MissingRegionError (missing region; use :region option or export region name to ENV['AWS_REGION']):
+  
+app/controllers/assets_controller.rb:32:in `block in create'
+app/controllers/assets_controller.rb:31:in `create'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.9ms)
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:05:52 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 601ms (Views: 543.3ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-12 20:05:59 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (19.6ms)
+  Rendered assets/new.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 106ms (Views: 80.1ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/asset" for 127.0.0.1 at 2017-02-12 20:06:04 +0000
+Processing by AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"umW5UIhWEiyMDMgzY7IWQSbljenx/fCY/31ugBB5YFQozTpZKDeG9aNdFNtaO1MlmTveu9bwQMQWOtWpfPY0fQ==", "asset"=>{"uploaded_file"=>#<ActionDispatch::Http::UploadedFile:0x007fca59b037d8 @tempfile=#<Tempfile:/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/RackMultipart20170212-83176-cao75f.png>, @original_filename="Minibarra-Chef-Favicon.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[uploaded_file]\"; filename=\"Minibarra-Chef-Favicon.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Upload"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/930bca0fb4556675445cdbafaf7c859020170212-83176-1c5z86o.png'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/930bca0fb4556675445cdbafaf7c859020170212-83176-1au8u67.png'
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "assets" ("user_id", "created_at", "updated_at", "uploaded_file_file_name", "uploaded_file_content_type", "uploaded_file_file_size", "uploaded_file_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 2], ["created_at", 2017-02-12 20:06:04 UTC], ["updated_at", 2017-02-12 20:06:04 UTC], ["uploaded_file_file_name", "Minibarra-Chef-Favicon.png"], ["uploaded_file_content_type", "image/png"], ["uploaded_file_file_size", 1197], ["uploaded_file_updated_at", 2017-02-12 20:06:04 UTC]]
+[paperclip] saving assets/8/Minibarra-Chef-Favicon.png
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 3315ms (ActiveRecord: 2.5ms)
+
+
+  
+Aws::Errors::MissingRegionError (missing region; use :region option or export region name to ENV['AWS_REGION']):
+  
+app/controllers/assets_controller.rb:32:in `block in create'
+app/controllers/assets_controller.rb:31:in `create'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.5ms)
+Started GET "/" for 127.0.0.1 at 2017-02-12 20:08:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 716ms (Views: 698.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:08:39 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 88ms (Views: 53.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-12 20:08:41 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (24.6ms)
+  Rendered assets/new.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 138ms (Views: 103.6ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/asset" for 127.0.0.1 at 2017-02-12 20:08:46 +0000
+Processing by AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zj4cxE+MRIJfIYluzK3p3QIXeBS6Qz6aq3ywg2DD+hX0lp/N7+3QW3BwVYb1JKy5vckrRp1OjsZCOwuqDEyuPA==", "asset"=>{"uploaded_file"=>#<ActionDispatch::Http::UploadedFile:0x007f9338c2e700 @tempfile=#<Tempfile:/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/RackMultipart20170212-83399-1pzaeon.png>, @original_filename="Minibarra-Chef-Favicon.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[uploaded_file]\"; filename=\"Minibarra-Chef-Favicon.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Upload"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/930bca0fb4556675445cdbafaf7c859020170212-83399-1b3kb9w.png'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/930bca0fb4556675445cdbafaf7c859020170212-83399-1yri9u8.png'
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "assets" ("user_id", "created_at", "updated_at", "uploaded_file_file_name", "uploaded_file_content_type", "uploaded_file_file_size", "uploaded_file_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 2], ["created_at", 2017-02-12 20:08:46 UTC], ["updated_at", 2017-02-12 20:08:46 UTC], ["uploaded_file_file_name", "Minibarra-Chef-Favicon.png"], ["uploaded_file_content_type", "image/png"], ["uploaded_file_file_size", 1197], ["uploaded_file_updated_at", 2017-02-12 20:08:46 UTC]]
+[paperclip] saving assets/9/Minibarra-Chef-Favicon.png
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 62439ms (ActiveRecord: 1.7ms)
+
+
+  
+Seahorse::Client::NetworkingError (execution expired):
+  
+app/controllers/assets_controller.rb:32:in `block in create'
+app/controllers/assets_controller.rb:31:in `create'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.4ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.2ms)
+Started POST "/asset" for 127.0.0.1 at 2017-02-12 20:10:51 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F2eCNcOQb7EZKQHHbxEgXXkgBuuGew22ey17e8jaqANzfeqnUDyO8oOy22aQDeFC8jsX5v8S6AsczWbu7m7xzw==", "asset"=>{"uploaded_file"=>#<ActionDispatch::Http::UploadedFile:0x007fde00749a38 @tempfile=#<Tempfile:/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/RackMultipart20170212-83481-o71tuk.png>, @original_filename="Minibarra-Chef-Favicon.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[uploaded_file]\"; filename=\"Minibarra-Chef-Favicon.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Upload"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/930bca0fb4556675445cdbafaf7c859020170212-83481-fdtsws.png'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/930bca0fb4556675445cdbafaf7c859020170212-83481-1yqzyhx.png'
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "assets" ("user_id", "created_at", "updated_at", "uploaded_file_file_name", "uploaded_file_content_type", "uploaded_file_file_size", "uploaded_file_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 2], ["created_at", 2017-02-12 20:10:52 UTC], ["updated_at", 2017-02-12 20:10:52 UTC], ["uploaded_file_file_name", "Minibarra-Chef-Favicon.png"], ["uploaded_file_content_type", "image/png"], ["uploaded_file_file_size", 1197], ["uploaded_file_updated_at", 2017-02-12 20:10:52 UTC]]
+[paperclip] saving assets/10/Minibarra-Chef-Favicon.png
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 62515ms (ActiveRecord: 7.1ms)
+
+
+  
+Seahorse::Client::NetworkingError (execution expired):
+  
+app/controllers/assets_controller.rb:32:in `block in create'
+app/controllers/assets_controller.rb:31:in `create'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.5ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.2ms)
+Started POST "/asset" for 127.0.0.1 at 2017-02-12 20:15:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F2eCNcOQb7EZKQHHbxEgXXkgBuuGew22ey17e8jaqANzfeqnUDyO8oOy22aQDeFC8jsX5v8S6AsczWbu7m7xzw==", "asset"=>{"uploaded_file"=>#<ActionDispatch::Http::UploadedFile:0x007f821c710368 @tempfile=#<Tempfile:/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/RackMultipart20170212-83684-f76lq4.png>, @original_filename="Minibarra-Chef-Favicon.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[uploaded_file]\"; filename=\"Minibarra-Chef-Favicon.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Upload"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/930bca0fb4556675445cdbafaf7c859020170212-83684-1lordps.png'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/930bca0fb4556675445cdbafaf7c859020170212-83684-1gq4fhv.png'
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "assets" ("user_id", "created_at", "updated_at", "uploaded_file_file_name", "uploaded_file_content_type", "uploaded_file_file_size", "uploaded_file_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 2], ["created_at", 2017-02-12 20:15:29 UTC], ["updated_at", 2017-02-12 20:15:29 UTC], ["uploaded_file_file_name", "Minibarra-Chef-Favicon.png"], ["uploaded_file_content_type", "image/png"], ["uploaded_file_file_size", 1197], ["uploaded_file_updated_at", 2017-02-12 20:15:29 UTC]]
+[paperclip] saving assets/11/Minibarra-Chef-Favicon.png
+  [1m[35m (26.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/asset
+Completed 302 Found in 735ms (ActiveRecord: 41.4ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:15:29 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 501ms (Views: 493.9ms | ActiveRecord: 1.3ms)
+
+
+  
+ActionController::MissingFile (Cannot read file assets/11/Minibarra-Chef-Favicon.png):
+  
+app/controllers/assets_controller.rb:69:in `get'
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:15:38 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 113ms (Views: 105.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:27:53 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 135ms (Views: 116.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:28:58 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 101ms (Views: 77.7ms | ActiveRecord: 1.1ms)
+
+
+  
+TypeError (no implicit conversion of URI::Generic into String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+NoMethodError (undefined method `parse' for "URI":String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+TypeError (no implicit conversion of URI::Generic into String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+TypeError (no implicit conversion of URI::Generic into String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+NoMethodError (undefined method `uploaded_file' for "#<Asset:0x007f8221e31b88>":String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+NoMethodError (undefined method `uploaded_file' for "#<Asset:0x007f821caea768>":String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+TypeError (no implicit conversion of URI::Generic into String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+TypeError (no implicit conversion of URI::Generic into String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+NoMethodError (undefined method `uploaded_file' for "#<Asset:0x007f82241f0178>":String):
+  
+app/controllers/assets_controller.rb:72:in `get'
+  
+TypeError (no implicit conversion of URI::Generic into String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+TypeError (no implicit conversion of URI::Generic into String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+Encoding::ConverterNotFoundError (code converter not found (US-ASCII to //s3.amazonaws.com/meehanbox/assets/11/Minibarra-Chef-Favicon.png?1486930529)):
+  
+app/controllers/assets_controller.rb:71:in `encode'
+app/controllers/assets_controller.rb:71:in `get'
+  
+TypeError (no implicit conversion of URI::Generic into String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:38:37 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 85ms (Views: 65.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:45:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 556ms (Views: 492.1ms | ActiveRecord: 8.0ms)
+
+
+  
+TypeError (no implicit conversion of URI::Generic into String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+  
+SyntaxError (/Users/ThomasMeehan/Desktop/storage/app/controllers/assets_controller.rb:81: syntax error, unexpected ..., expecting ')'
+    AWS::S3::Base.establish_connection!( ... )
+                                            ^):
+  
+app/controllers/assets_controller.rb:81: syntax error, unexpected ..., expecting ')'
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:48:59 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 87ms (Views: 63.9ms | ActiveRecord: 5.4ms)
+
+
+  
+TypeError (no implicit conversion of URI::Generic into String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:49:02 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 88ms (Views: 82.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:51:22 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 68ms (Views: 62.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:51:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.5ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 552ms (Views: 491.1ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:51:34 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 72ms (Views: 67.3ms | ActiveRecord: 0.9ms)
+
+
+  
+TypeError (no implicit conversion of URI::Generic into String):
+  
+app/controllers/assets_controller.rb:71:in `get'
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 20:51:41 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 80ms (Views: 73.7ms | ActiveRecord: 1.2ms)
+
+

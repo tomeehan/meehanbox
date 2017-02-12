@@ -6,7 +6,6 @@ class Asset < ApplicationRecord
 	has_attached_file :uploaded_file, 
               :path => "assets/:id/:basename.:extension", 
               :storage => :s3, 
-              :s3_credentials => "#{Rails_ROOT}/config/amazon_s3.yml", 
               :bucket => "meehanbox"
 	  
 	validates_attachment_size :uploaded_file, :less_than => 10.megabytes   
