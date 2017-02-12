@@ -21,3 +21,28 @@ body {
     color: #8091A5;
     font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
+
+nav {
+	background: white !important;
+	border-bottom: 0.5px solid lighten(#8091A5, 25%);
+}
+
+nav .navbar-brand {
+	font-weight: 600;
+	color: #0275d8 !important;
+}
+
+.card input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.card input:focus {
+	outline: none;
+	
+}
+
+.card .btn-block {
+	height: 50px;
+}

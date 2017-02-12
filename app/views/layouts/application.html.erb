@@ -9,20 +9,36 @@
   </head>
 
   <body>
-		<% if user_signed_in? %>
-			<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-		<% else %>
-			<%= link_to "Log in", new_user_session_path %>
-			<%= link_to "Sign up", new_user_registration_path %>
-		<% end %>
-		<br>
-		<hr>
+		
+		<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">MeehanBox</a>
+		  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		    <div class="navbar-nav">
+		      <% if user_signed_in? %>
+		      		<%= link_to "Home", root_path, class: 'nav-item nav-link' %>
+					<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
+				<% else %>
+					<%= link_to "Log in", new_user_session_path, class: 'nav-item nav-link' %>
+					<%= link_to "Sign up", new_user_registration_path, class: 'nav-item nav-link' %>
+				<% end %>
+		    </div>
+		  </div>
+		</nav>		
 		<% if flash[:error] -%>
 		  <p class='error'><%=h flash[:error] %></p>
 		<% end -%>
 		<% if flash[:notice] -%>
 		  <p class='notice'><%=h flash[:notice] %></p>
-		<% end -%>		
-    <%= yield %>
+		<% end -%>
+	<br>
+	<br>
+	<br>
+    <div class="<% if user_signed_in? %>card<% end %> container">
+    	<%= yield %>
+   	</div>
+
   </body>
 </html>
