@@ -13,6 +13,7 @@ source 'https://rails-assets.org' do
 end
 gem "paperclip"
 gem "font-awesome-rails"
+gem "aws-s3"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
