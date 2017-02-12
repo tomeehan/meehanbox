@@ -2,7 +2,9 @@
 	Upload File
 </div>
 
-<%= render 'form', asset: @asset %>
+<div class="container">
+	<%= render 'form', asset: @asset %>		
+</div>
 
 <div class="card-footer">
 	<%= link_to 'Back', assets_path, class: 'btn btn-secondary' %>		
