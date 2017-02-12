@@ -18,7 +18,7 @@
 		  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		    <div class="navbar-nav">
 		      <% if user_signed_in? %>
-		      		<%= link_to "Home", root_path, class: 'nav-item nav-link' %>
+		      		<%= link_to "Home", assets_path, class: 'nav-item nav-link' %>
 					<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
 				<% else %>
 					<%= link_to "Log in", new_user_session_path, class: 'nav-item nav-link' %>
