@@ -3186,3 +3186,332 @@ app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html
   Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
   Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (78.5ms)
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:34:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (19.3ms)
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:34:24 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 9907ms (Views: 9837.7ms | ActiveRecord: 8.8ms)
+
+
+Completed 200 OK in 7666ms (Views: 7655.6ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:35:36 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 68ms (Views: 61.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:36:47 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 90ms (Views: 82.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:36:53 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 88ms (Views: 82.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:39:33 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 61ms (Views: 56.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:39:54 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 82ms (Views: 77.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:40:13 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3632ms (Views: 3626.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:40:26 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 82ms (Views: 76.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-12 17:40:31 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (14.9ms)
+  Rendered assets/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 113ms (Views: 84.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:40:48 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 84ms (Views: 77.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:41:09 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 91ms (Views: 85.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-12 17:41:15 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (2.6ms)
+  Rendered assets/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 79ms (Views: 74.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:41:23 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 119ms (Views: 111.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-12 17:41:56 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (2.4ms)
+  Rendered assets/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 96ms (Views: 89.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/asset" for 127.0.0.1 at 2017-02-12 17:42:02 +0000
+Processing by AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hjD2S9SfohJxsRTD9g0UVLXPJF3lKPa0i6Nnl3+gwsHn+zDVtu4jlXawwjNx6XghltKADOXFVNsiywPwiFQPaw==", "asset"=>{"uploaded_file"=>#<ActionDispatch::Http::UploadedFile:0x007f9b38a22968 @tempfile=#<Tempfile:/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/RackMultipart20170212-79513-rvhwqr.png>, @original_filename="Minibarra-Chef-Favicon.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[uploaded_file]\"; filename=\"Minibarra-Chef-Favicon.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Upload"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/930bca0fb4556675445cdbafaf7c859020170212-79513-1jtot85.png'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/930bca0fb4556675445cdbafaf7c859020170212-79513-k3lahq.png'
+  [1m[35mSQL (7.2ms)[0m  [1m[32mINSERT INTO "assets" ("user_id", "created_at", "updated_at", "uploaded_file_file_name", "uploaded_file_content_type", "uploaded_file_file_size", "uploaded_file_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["created_at", 2017-02-12 17:42:03 UTC], ["updated_at", 2017-02-12 17:42:03 UTC], ["uploaded_file_file_name", "Minibarra-Chef-Favicon.png"], ["uploaded_file_content_type", "image/png"], ["uploaded_file_file_size", 1197], ["uploaded_file_updated_at", 2017-02-12 17:42:03 UTC]]
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/asset
+Completed 302 Found in 88ms (ActiveRecord: 20.7ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:42:03 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.8ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 111ms (Views: 106.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:42:39 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 78ms (Views: 73.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:42:57 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 73ms (Views: 67.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:43:21 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 63ms (Views: 58.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:43:29 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 77ms (Views: 71.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:43:37 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 69ms (Views: 63.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:43:40 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 80ms (Views: 74.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:43:45 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 77ms (Views: 69.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:44:14 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "http://localhost:3000/assets/get/6":String):
+    22:           <td><%= link_to asset.uploaded_file_file_name, asset.uploaded_file.url %></td>
+    23:           <td><%= asset.uploaded_file_updated_at %></td>
+    24:           <td>
+    25:             <%= link_to asset.file_name, download_url(asset) do %>
+    26:               <i class="fa fa-download "></i> 
+    27:             <% end %>
+    28:           </td>
+  
+app/views/assets/index.html.erb:25:in `block in _app_views_assets_index_html_erb___4457445268392317916_70152237900500'
+app/views/assets/index.html.erb:19:in `_app_views_assets_index_html_erb___4457445268392317916_70152237900500'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.9ms)
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:44:25 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "http://localhost:3000/assets/get/6":String):
+    22:           <td><%= link_to asset.uploaded_file_file_name, asset.uploaded_file.url %></td>
+    23:           <td><%= asset.uploaded_file_updated_at %></td>
+    24:           <td>
+    25:             <%= link_to asset.file_name, download_url(asset) do %>
+    26:               dt
+    27:             <% end %>
+    28:           </td>
+  
+app/views/assets/index.html.erb:25:in `block in _app_views_assets_index_html_erb___4457445268392317916_70152238328280'
+app/views/assets/index.html.erb:19:in `_app_views_assets_index_html_erb___4457445268392317916_70152238328280'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (68.5ms)
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:44:37 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 70ms (Views: 64.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:44:44 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 77ms (Views: 73.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-12 17:45:13 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered assets/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 74ms (Views: 69.1ms | ActiveRecord: 0.9ms)
+
+

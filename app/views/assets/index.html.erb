@@ -1,12 +1,13 @@
 
 <div class="card-header">
-  <%= link_to 'Upload File', new_asset_path, class: 'btn btn-primary' %>
+  <%= link_to new_asset_path, class: 'btn btn-primary' do %>
+  <i class="fa fa-upload "></i> Upload file
+  <% end %>
 </div>
 <div class="container">
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Asset ID</th>
         <th>File Name</th>
         <th>Uploaded At</th>
         <th>Download</th>
@@ -16,11 +17,18 @@
     <tbody>
       <% @assets.each do |asset| %>
         <tr>
-          <td><%= asset.user_id %></td>
           <td><%= link_to asset.uploaded_file_file_name, asset.uploaded_file.url %></td>
           <td><%= asset.uploaded_file_updated_at %></td>
-          <td><%= link_to asset.file_name, download_url(asset) %></td>
-          <td><%= link_to 'Delete', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>
+            <%= link_to download_url(asset) do %>
+              <i class="fa fa-download "></i> 
+            <% end %>
+          </td>
+          <td>
+            <%= link_to asset, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fa fa-trash "></i> 
+             <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
@@ -28,6 +36,10 @@
   <% if current_user.assets.count == 0 %>
   <div class="no-files">
     <p>
+      <i class="fa fa-frown-o fa-5x"></i>
+      <br>
+      <br>
+      <br>
       Hey, <%= current_user.name %> it looks like you don't have any files! 
       <br>
       Click that blue button above to upload something.
