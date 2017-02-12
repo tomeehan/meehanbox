@@ -67,6 +67,9 @@ class AssetsController < ApplicationController
     asset = current_user.assets.find_by_id(params[:id]) 
     if asset 
       send_file asset.uploaded_file.path, :type => asset.uploaded_file_content_type 
+    else
+      redirect_to assets_path
+      flash[:error] = "Careful now! Those aren't yours."
     end
   end
 
