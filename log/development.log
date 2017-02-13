@@ -5534,3 +5534,21 @@ Processing by FoldersController#new as HTML
 Completed 200 OK in 94ms (Views: 85.1ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/folders/new" for 127.0.0.1 at 2017-02-13 01:13:54 +0000
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering folders/new.html.erb within layouts/application
+  Rendered folders/_form.html.erb (3.0ms)
+  Rendered folders/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 115ms (Views: 107.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/folders/new" for 127.0.0.1 at 2017-02-13 01:14:12 +0000
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering folders/new.html.erb within layouts/application
+  Rendered folders/_form.html.erb (3.0ms)
+  Rendered folders/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 98ms (Views: 92.0ms | ActiveRecord: 0.7ms)
+
+
