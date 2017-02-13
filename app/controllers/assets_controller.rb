@@ -34,7 +34,7 @@ class AssetsController < ApplicationController
     @asset = current_user.assets.build(asset_params)
 
     respond_to do |format|
-      if @asset.save
+      if @asset.save!
         format.json { render :show, status: :created, location: @asset }
         if @asset.folder
           format.html { redirect_to browse_path(@asset.folder) , notice: 'File was successfully created.' }
