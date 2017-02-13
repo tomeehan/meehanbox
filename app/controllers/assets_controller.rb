@@ -1,19 +1,14 @@
 class AssetsController < ApplicationController
   before_action :set_asset, only: [:show, :edit, :update, :destroy]
 
-  # GET /assets
-  # GET /assets.json
   def index
     @assets = current_user.assets
   end
 
-  # GET /assets/1
-  # GET /assets/1.json
   def show
     @asset = current_user.assets.find(params[:id])
   end
 
-  # GET /assets/new
   def new
     @asset = current_user.assets.build
 
@@ -23,13 +18,10 @@ class AssetsController < ApplicationController
     end
   end
 
-  # GET /assets/1/edit
   def edit
     @asset = current_user.assets.find(params[:id]) 
   end
 
-  # POST /assets
-  # POST /assets.json
   def create
     @asset = current_user.assets.build(asset_params)
 
@@ -48,8 +40,6 @@ class AssetsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /assets/1
-  # PATCH/PUT /assets/1.json
   def update
     respond_to do |format|
       if @asset.update(asset_params)
@@ -62,8 +52,6 @@ class AssetsController < ApplicationController
     end
   end
 
-  # DELETE /assets/1
-  # DELETE /assets/1.json
   def destroy
     @asset = current_user.assets.find(params[:id])
     @parent_folder = @asset.folder # get parent folder before deleting record
