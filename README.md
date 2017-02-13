@@ -1,6 +1,6 @@
 # README
 
-Dropbox clone built with Rails 5, Bootstrap 4 and Amazon S3. 
+Dropbox clone built with Rails 5, Bootstrap 4 (Alpha) and Amazon S3. 
 
 Users can create folders and upload files.
 
@@ -19,6 +19,7 @@ MeehanBox is using:
 
 - Rails 5
 - Ruby 2.3
+- Bootstrap 4 (Alpha)
 - PostgreSQL 
 - Amazon S3
 
