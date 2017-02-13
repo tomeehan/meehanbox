@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
 		if @current_folder
 			@folders = @current_folder.children
-			@assets = current_user.assets.order("uploaded_file_file_name desc") 
+			@assets = @current_folder.assets.order("uploaded_file_file_name desc")
 			render :action => "index"
 		else
 			flash[:error] = "Whoa there! That's not your folder!"
