@@ -24,6 +24,8 @@ en:
     label: 
       folder:
         name: "Folder name" # When creating new folders
+      file:
+        name: "File"  
   nav:
     login: "Log in"
     sign_up: "Sign up"
@@ -64,6 +66,15 @@ en:
       create_folder: "Create Folder" # button (i.e. 'create this new folder')
       back_to_my_files: "Back to 'My Files'"
       back_to_folder: "Back to %{folder_name}"
+  file: 
+    new:
+      # see helpers: label: file: name: (line ~28) for "Form" above input.
+      # "Choose file" and "No file chosen" are translated by the users browser.
+      upload_file: "Upload file" # page title
+      upload: "Upload" # button (i.e. Upload this file)
+      back_to_my_files: "Back to 'My Files'"
+      back_to_folder: "Back to %{folder_name}"
+
 
 
 
