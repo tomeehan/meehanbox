@@ -106,6 +106,6 @@ class AssetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def asset_params
-      params.require(:asset).permit(:user_id, :uploaded_file_file_name, :uploaded_file_content_type, :uploaded_file_file_size, :uploaded_file_updated_at, :uploaded_file, :user_id, :uploaded_file, :folder_id)
+      params.require(:asset).permit(:user_id, :uploaded_file_file_name, :uploaded_file_content_type, :uploaded_file_file_size, :uploaded_file_updated_at, :uploaded_file, :user_id, :folder_id)
     end
 end
