@@ -31,12 +31,16 @@ class AssetsController < ApplicationController
   # POST /assets
   # POST /assets.json
   def create
-    @asset = current_user.assets.new(asset_params)
+    @asset = current_user.assets.build(asset_params)
 
     respond_to do |format|
       if @asset.save
-        format.html { redirect_to assets_path, notice: 'Asset was successfully created.' }
         format.json { render :show, status: :created, location: @asset }
+        if @asset.folder
+          format.html { redirect_to browse_path(@asset.folder) , notice: 'Asset was successfully created.' }
+        else
+          format.html { redirect_to root_path, notice: 'Asset was successfully created.' }
+        end
       else
         format.html { render :new }
         format.json { render json: @asset.errors, status: :unprocessable_entity }
