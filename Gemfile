@@ -14,6 +14,7 @@ end
 gem "paperclip"
 gem "font-awesome-rails"
 gem 'aws-sdk', '~> 2.3'
+gem "acts_as_tree"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
