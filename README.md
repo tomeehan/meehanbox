@@ -14,3 +14,26 @@ In production: [meehanbox.herokuapp.com/](http://meehanbox.herokuapp.com/)
 - [ ] Rename folders
 - [ ] Upload PDF's, MS Office, iWork, Adobe CC filetypes.
 - [ ] Shared folders
+
+MeehanBox is using: 
+
+- Rails 5
+- Ruby 2.3
+- PostgreSQL 
+- Amazon S3
+
+To get up and running: 
+
+1. `cd storage`
+2. `rails db:create`
+3. `rails db:migrate`
+4. Set your Amazon S3 environment variables. 
+	- `S3_BUCKET_NAME`
+	- `AWS_ACCESS_KEY_ID`
+	- `AWS_SECRET_ACCESS_KEY`
+	- `AWS_REGION`
+5. `rails server`
+
+
+
+
