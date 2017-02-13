@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   root 'home#index'
   match 'assets/get/:id' => 'assets#get', :via => [:get], :as => 'download'
   match "browse/:folder_id" => "home#browse", :via => [:get] , :as => "browse"
+  match "browse/:folder_id/new_folder" => "folders#new", :via => [:get], :as => "new_sub_folder"
 
 end
