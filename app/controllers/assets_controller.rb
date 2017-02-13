@@ -15,7 +15,12 @@ class AssetsController < ApplicationController
 
   # GET /assets/new
   def new
-    @asset = current_user.assets.new
+    @asset = current_user.assets.build
+
+    if params[:folder_id] # if we want to upload a file inside a folder
+      @current_folder = current_user.folders.find(params[:folder_id])
+      @asset.folder_id = @current_folder.id
+    end
   end
 
   # GET /assets/1/edit
