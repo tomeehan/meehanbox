@@ -51,8 +51,7 @@
         <th>Name</th>
         <th>Size</th>
         <th>Uploaded At</th>
-        <th>Download</th>
-        <th>Delete</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -70,12 +69,17 @@
         <td>
           -
         </td>
-        <td>
-          -
+        <td class="actions">
+          <%= link_to do %>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to do %>
+          <i class="fa fa-share-square-o" aria-hidden="true"></i>
+          <% end %>          
+          <%= link_to folder, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fa fa-trash "></i> 
+           <% end %>
         </td>
-        <td>
-          -
-        </th>
        </tr> 
       <% end %>
       <% @assets.each do |asset| %>
@@ -90,12 +94,10 @@
             <%= number_to_human_size(asset.uploaded_file_file_size, precision: 2) %>
           </td>
           <td><%= asset.uploaded_file_updated_at %></td>
-          <td>
+          <td class="actions">
             <%= link_to download_url(asset) do %>
               <i class="fa fa-download "></i> 
             <% end %>
-          </td>
-          <td>
             <%= link_to asset, method: :delete, data: { confirm: 'Are you sure?' } do %>
               <i class="fa fa-trash "></i> 
              <% end %>
