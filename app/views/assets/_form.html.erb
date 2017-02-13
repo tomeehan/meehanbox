@@ -1,8 +1,11 @@
 <%= form_for @asset, :html => {:multipart => true} do |f| %> 
     <p> 
-        <%= f.label :uploaded_file, "File" %><br /> 
-        <%= f.file_field :uploaded_file %> 
+    	<%= f.label :uploaded_file, "File" %><br /> 
+			<%= f.file_field :uploaded_file, class: "file-field"%>
+			<%= f.hidden_field :folder_id %>
     </p>
-    <%= f.hidden_field :folder_id %>
-  	<p><%= f.submit "Upload", class: 'btn btn-primary' %></p> 
+    
+  	<p>
+  		<%= f.submit "Upload", class: 'btn btn-primary' %>
+  	</p> 
 <% end %>
