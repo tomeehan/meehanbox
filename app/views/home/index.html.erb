@@ -1,42 +1,42 @@
 <% unless user_signed_in? %>
 <div class="jumbotron">
-  <h1 class="display-6">Welcome to Minibarra Cloud</h1>
-  <p class="lead">Secure cloud storage for hospitality.</p>
+  <h1 class="display-6">Welcome to MeehanBox</h1>
+  <p class="lead">Simple cloud storage for Meehan's worldwide.</p>
   <hr class="my-4">
-  <p>All your files in one place.</p>
+  <p>Dropbox, please don't sue.</p>
   <p class="lead">
     <%= link_to "Log in", new_user_session_path, class: 'btn btn-primary btn-lg' %>
     <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-secondary btn-lg' %>
   </p>
 </div>
 <div class="row">
-	<div class="col-sm-5 offset-sm-1">
-		<div class="features">
-			<h2>Features</h2>
-			<p>
-				<i class="fa fa-cloud-upload" aria-hidden="true"></i>
- 				Upload files
- 			</p>
-			<p>
-				<i class="fa fa-cloud-download" aria-hidden="true"></i>
-				Download files
-			</p>
-			<p>
-				<i class="fa fa-folder" aria-hidden="true"></i>
-				Create folders
-			</p>
-		</div>
-	</div>
-	<div class="col-sm-6">
-		<div class="card" style="width: 20rem; display: none;">
-		  <div class="card-block">
-		    <h4 class="card-title">MeehanBox on GitHub</h4>
-		    <p class="card-text">MeehanBox was built with Rails 5, using AWS S3, Paperclip, Devise, PostgreSQL and Bootstrap 4 (Alpha).</p>
-		    <a href="http://github.com/tomeehan/storage" class="btn btn-primary"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
-		  </div>
-		</div>		
-	</div>		
-	</div>
+  <div class="col-sm-5 offset-sm-1">
+    <div class="features">
+      <h2>Features</h2>
+      <p>
+        <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+        Upload files
+      </p>
+      <p>
+        <i class="fa fa-cloud-download" aria-hidden="true"></i>
+        Download files
+      </p>
+      <p>
+        <i class="fa fa-folder" aria-hidden="true"></i>
+        Create folders
+      </p>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card" style="width: 20rem;">
+      <div class="card-block">
+        <h4 class="card-title">MeehanBox on GitHub</h4>
+        <p class="card-text">MeehanBox was built with Rails 5, using AWS S3, Paperclip, Devise, PostgreSQL and Bootstrap 4 (Alpha).</p>
+        <a href="http://github.com/tomeehan/storage" class="btn btn-primary"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+      </div>
+    </div>    
+  </div>    
+  </div>
 
 </div>
 <% else %>
