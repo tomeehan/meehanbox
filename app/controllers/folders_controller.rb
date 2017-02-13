@@ -16,7 +16,13 @@ class FoldersController < ApplicationController
 
   # GET /folders/new
   def new
-   @folder = current_user.folders.new
+    @folder = current_user.folders.new
+
+    # if there is a folder_id param, the folder is in another folder.
+    if params[:folder_id]
+      @current_folder = current_user.folders.find(params[:folder_id])
+      @folder.parent_id = @current_folder.id
+    end
   end
 
   # GET /folders/1/edit
