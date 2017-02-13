@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :folders
   resources :assets, path: "asset", only: [:new, :create, :index, :destroy] #-> url.com/asset/new
 
   devise_for :users
