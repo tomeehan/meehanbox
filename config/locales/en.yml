@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  helpers:
+    label: 
+      folder:
+        name: "Folder name" # When creating new folders
   nav:
     login: "Log in"
     sign_up: "Sign up"
@@ -52,5 +56,14 @@ en:
       empty_folder_bottom: "Click that blue button below to upload something."
       confirm_delete_file: "Are you sure?"
       confirm_delete_folder: "Are you sure you want to delete this folder and everything inside?"
+  folder:
+    # TODO Rename Folder
+    new:
+      # see helpers: label: folder: name: (line ~26) for form inputs.
+      new_folder: "New Folder" # page title
+      create_folder: "Create Folder" # button (i.e. 'create this new folder')
+      back_to_my_files: "Back to 'My Files'"
+      back_to_folder: "Back to %{folder_name}"
+
 
 

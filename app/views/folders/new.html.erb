@@ -1,5 +1,5 @@
 <div class="card-header">
-	New Folder
+	<%= t "folder.new.new_folder" %>
 </div>
 
 <div class="container">
@@ -8,8 +8,12 @@
 
 <div class="card-footer">
 	<% if @folder.parent %> 
-	   <%= link_to "Back to '#{@folder.parent.name}' Folder", browse_path(@folder.parent), class: 'btn btn-secondary' %>		
+	   <%= link_to browse_path(@folder.parent), class: 'btn btn-secondary' do %>		
+	   <%= t("folder.new.back_to_folder", :folder_name => @folder.parent.name) %>
+	   <% end %>
 	<% else %> 
-	   <%= link_to "Back to My Files", root_url, class: 'btn btn-secondary' %>		
+		<%= link_to root_url, class: 'btn btn-secondary' do %>	
+	  	<%= t "folder.new.back_to_my_files" %>
+	  <% end %>	
 	<% end %>
 </div>
