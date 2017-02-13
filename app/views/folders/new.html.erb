@@ -7,5 +7,9 @@
 </div>
 
 <div class="card-footer">
-	<%= link_to 'Back', folders_path, class: 'btn btn-secondary' %>		
+	<% if @folder.parent %> 
+	   <%= link_to "Back to '#{@folder.parent.name}' Folder", browse_path(@folder.parent), class: 'btn btn-secondary' %>		
+	<% else %> 
+	   <%= link_to "Back to Home page", root_url, class: 'btn btn-secondary' %>		
+	<% end %>
 </div>
