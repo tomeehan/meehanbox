@@ -5514,3 +5514,23 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 3842ms (Views: 3834.6ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:12:47 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 120ms (Views: 112.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/folders/new" for 127.0.0.1 at 2017-02-13 01:12:53 +0000
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering folders/new.html.erb within layouts/application
+  Rendered folders/_form.html.erb (3.8ms)
+  Rendered folders/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 94ms (Views: 85.1ms | ActiveRecord: 0.4ms)
+
+
