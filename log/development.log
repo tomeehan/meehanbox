@@ -6095,3 +6095,159 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 103ms (Views: 99.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/asset" for 127.0.0.1 at 2017-02-13 16:40:45 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 823ms (Views: 762.5ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-13 16:40:49 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (22.1ms)
+  Rendered assets/new.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 114ms (Views: 107.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/asset" for 127.0.0.1 at 2017-02-13 16:40:55 +0000
+Processing by AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oUyuLikkPoci4oaBIGZsiOSpcKi8IjHWu3SPVRCKKWsZSMt4FbgLpj/hoIWutwpEX616WjMiTICEckuT8B0GQg==", "asset"=>{"uploaded_file"=>#<ActionDispatch::Http::UploadedFile:0x007fdee2ae4890 @tempfile=#<Tempfile:/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/RackMultipart20170213-19716-psv9gk.png>, @original_filename="apple-touch-icon-60x60.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[uploaded_file]\"; filename=\"apple-touch-icon-60x60.png\"\r\nContent-Type: image/png\r\n">, "folder_id"=>""}, "commit"=>"Upload"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/6fd579d309aaf8355e3055670b30054320170213-19716-18620lq.png'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/6fd579d309aaf8355e3055670b30054320170213-19716-aozvew.png'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (1.6ms)
+  Rendered assets/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 111ms (Views: 68.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-13 16:41:16 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 79ms (Views: 70.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/asset/new" for 127.0.0.1 at 2017-02-13 16:41:19 +0000
+Processing by AssetsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (1.9ms)
+  Rendered assets/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 134ms (Views: 82.9ms | ActiveRecord: 16.4ms)
+
+
+Started POST "/asset" for 127.0.0.1 at 2017-02-13 16:41:23 +0000
+Processing by AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9ozDEosLhugOJJ4O2MR7lXvDNbkMreHphKUhseDchyNOiKZEt5ezyRMnuApWFR1ZwMc/S4OtnL+7o+V3AEuoCg==", "asset"=>{"uploaded_file"=>#<ActionDispatch::Http::UploadedFile:0x007fdeea8703b8 @tempfile=#<Tempfile:/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/RackMultipart20170213-19716-1ybhepc.png>, @original_filename="apple-touch-icon-57x57.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[uploaded_file]\"; filename=\"apple-touch-icon-57x57.png\"\r\nContent-Type: image/png\r\n">, "folder_id"=>""}, "commit"=>"Upload"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/ba2584f549458013de59c3e3bbf7a94f20170213-19716-7t7sjc.png'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/ba2584f549458013de59c3e3bbf7a94f20170213-19716-1u7bzd7.png'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 40ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Folder must exist):
+  
+app/controllers/assets_controller.rb:37:in `block in create'
+app/controllers/assets_controller.rb:36:in `create'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.6ms)
+Started GET "/" for 127.0.0.1 at 2017-02-13 16:41:31 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_breadcrumbs.html.erb (0.6ms)
+  [1m[36mFolder Load (0.7ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 AND "folders"."parent_id" IS NULL[0m  [["user_id", 2]]
+  [1m[36mAsset Load (1.1ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 AND (folder_id is NULL) ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 107ms (Views: 84.3ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/browse/3" for 127.0.0.1 at 2017-02-13 16:41:33 +0000
+Processing by HomeController#browse as HTML
+  Parameters: {"folder_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFolder Load (6.9ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."user_id" = $1 AND "folders"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_breadcrumbs.html.erb (1.4ms)
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."parent_id" = $1[0m  [["parent_id", 3]]
+  [1m[36mAsset Load (0.5ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."folder_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["folder_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 94ms (Views: 77.0ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/browse/3/new_file" for 127.0.0.1 at 2017-02-13 16:41:34 +0000
+Processing by AssetsController#new as HTML
+  Parameters: {"folder_id"=>"3"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFolder Load (0.5ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."user_id" = $1 AND "folders"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  Rendering assets/new.html.erb within layouts/application
+  Rendered assets/_form.html.erb (2.6ms)
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered assets/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 220ms (Views: 209.9ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/asset" for 127.0.0.1 at 2017-02-13 16:41:39 +0000
+Processing by AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8WccVU3kb+yUEIaD469JBJ5ESH9tr3uZPJJRR6mQ4IBJY3kDcXhazYkToIdtfi/IJUBCjeKvBs8DlJWBSQfPqQ==", "asset"=>{"uploaded_file"=>#<ActionDispatch::Http::UploadedFile:0x007fdee6c5c048 @tempfile=#<Tempfile:/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/RackMultipart20170213-19716-1fxjgm6.png>, @original_filename="apple-touch-icon-57x57.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[uploaded_file]\"; filename=\"apple-touch-icon-57x57.png\"\r\nContent-Type: image/png\r\n">, "folder_id"=>"3"}, "commit"=>"Upload"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/ba2584f549458013de59c3e3bbf7a94f20170213-19716-14iwplm.png'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Load (0.5ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/x4/36lwjcb114x43jv12bbr04340000gn/T/ba2584f549458013de59c3e3bbf7a94f20170213-19716-1jhojf8.png'
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "assets" ("user_id", "created_at", "updated_at", "uploaded_file_file_name", "uploaded_file_content_type", "uploaded_file_file_size", "uploaded_file_updated_at", "folder_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 2], ["created_at", 2017-02-13 16:41:39 UTC], ["updated_at", 2017-02-13 16:41:39 UTC], ["uploaded_file_file_name", "apple-touch-icon-57x57.png"], ["uploaded_file_content_type", "image/png"], ["uploaded_file_file_size", 3811], ["uploaded_file_updated_at", 2017-02-13 16:41:39 UTC], ["folder_id", 3]]
+[paperclip] saving assets/18/apple-touch-icon-57x57.png
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/browse/3
+Completed 302 Found in 655ms (ActiveRecord: 20.5ms)
+
+
+Started GET "/browse/3" for 127.0.0.1 at 2017-02-13 16:41:40 +0000
+Processing by HomeController#browse as HTML
+  Parameters: {"folder_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."user_id" = $1 AND "folders"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_breadcrumbs.html.erb (0.6ms)
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."parent_id" = $1[0m  [["parent_id", 3]]
+  [1m[36mAsset Load (0.7ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."folder_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["folder_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 71ms (Views: 63.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 16:41:53 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_breadcrumbs.html.erb (0.7ms)
+  [1m[36mFolder Load (0.9ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 AND "folders"."parent_id" IS NULL[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.7ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 AND (folder_id is NULL) ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 76ms (Views: 66.4ms | ActiveRecord: 2.4ms)
+
+
