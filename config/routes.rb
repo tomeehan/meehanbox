@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   match 'assets/get/:id' => 'assets#get', :via => [:get], :as => 'download'
   match "browse/:folder_id" => "home#browse", :via => [:get] , :as => "browse"
   match "browse/:folder_id/new_folder" => "folders#new", :via => [:get], :as => "new_sub_folder"
-
+  match "browse/:folder_id/new_file" => "assets#new", :via => [:get], :as => "new_sub_file"
 end
