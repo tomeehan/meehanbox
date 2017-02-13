@@ -22,8 +22,12 @@
 		      		<%= link_to "My Files", root_path, class: 'nav-item nav-link' %>
 					<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
 				<% else %>
-					<%= link_to "Log in", new_user_session_path, class: 'nav-item nav-link' %>
-					<%= link_to "Sign up", new_user_registration_path, class: 'nav-item nav-link' %>
+					<%= link_to new_user_session_path, class: 'nav-item nav-link' do %>
+						<%= t "nav.login" %>
+					<% end %>
+					<%= link_to new_user_registration_path, class: 'nav-item nav-link' do %>
+						<%= t "nav.sign_up" %>
+					<% end %>
 				<% end %>
 		    </div>
 		  </div>

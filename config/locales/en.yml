@@ -20,4 +20,25 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  nav:
+    login: "Log in"
+    sign_up: "Sign up"
+  home:
+    logged_out:
+      welcome_to_meehanbox: "Welcome to MeehanBox"
+      subtitle: "Simple cloud storage for Meehan's worldwide"
+      get_started: "Get started:"
+      login: "Log in"
+      sign_up: "Sign up"
+      features:
+        features: "Features"
+        upload_files: "Upload files"
+        download_files: "Download files"
+        create_folders: "Create folders"
+      github_card:
+        header: "MeehanBox on GitHub"
+        text: "MeehanBox was built with Rails 5, using AWS S3, Paperclip, Devise, PostgreSQL and Bootstrap 4 (Alpha)."
+        btn: "GitHub"
+    logged_in:
+      
+

@@ -1,38 +1,49 @@
 <% unless user_signed_in? %>
 <div class="jumbotron">
-  <h1 class="display-6">Welcome to MeehanBox</h1>
-  <p class="lead">Simple cloud storage for Meehan's worldwide.</p>
+  <h1 class="display-6"><%= t "home.logged_out.welcome_to_meehanbox" %></h1>
+  <p class="lead"><%= t "home.logged_out.subtitle" %></p>
   <hr class="my-4">
-  <p>Dropbox, please don't sue.</p>
+  <p><%= t "home.logged_out.get_started" %></p>
   <p class="lead">
-    <%= link_to "Log in", new_user_session_path, class: 'btn btn-primary btn-lg' %>
-    <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-secondary btn-lg' %>
+    <%= link_to new_user_session_path, class: 'btn btn-primary btn-lg' do %>
+    <%= t "home.logged_out.login" %>
+    <% end %>
+    <%= link_to new_user_registration_path, class: 'btn btn-secondary btn-lg' do %>
+      <%= t "home.logged_out.sign_up" %>
+    <% end %>
   </p>
 </div>
 <div class="row">
   <div class="col-sm-5 offset-sm-1">
     <div class="features">
-      <h2>Features</h2>
+      <h2><%= t "home.logged_out.features.features" %></h2>
       <p>
         <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-        Upload files
+        <%= t "home.logged_out.features.upload_files" %>
       </p>
       <p>
         <i class="fa fa-cloud-download" aria-hidden="true"></i>
-        Download files
+        <%= t "home.logged_out.features.download_files" %>
       </p>
       <p>
         <i class="fa fa-folder" aria-hidden="true"></i>
-        Create folders
+        <%= t "home.logged_out.features.create_folders" %>
       </p>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="card" style="width: 20rem;">
       <div class="card-block">
-        <h4 class="card-title">MeehanBox on GitHub</h4>
-        <p class="card-text">MeehanBox was built with Rails 5, using AWS S3, Paperclip, Devise, PostgreSQL and Bootstrap 4 (Alpha).</p>
-        <a href="http://github.com/tomeehan/storage" class="btn btn-primary"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+        <h4 class="card-title">
+          <%= t "home.logged_out.github_card.header" %>  
+        </h4>
+        <p class="card-text">
+          <%= t "home.logged_out.github_card.text" %>
+        </p>
+        <a href="http://github.com/tomeehan/storage" class="btn btn-primary">
+          <i class="fa fa-github" aria-hidden="true"></i> 
+          <%= t "home.logged_out.github_card.btn" %>
+        </a>
       </div>
     </div>    
   </div>    
