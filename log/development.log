@@ -7533,3 +7533,10 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 100ms (Views: 97.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-02-13 18:24:35 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 122ms (Views: 118.2ms | ActiveRecord: 0.0ms)
+
+

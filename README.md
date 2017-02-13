@@ -1,6 +1,6 @@
 # README
 
-Dropbox clone built with Rails 5, Bootstrap 4 (Alpha) and Amazon S3. 
+Dropbox clone built with Rails 5 following on old [Rails 3 tutorial](https://code.tutsplus.com/tutorials/build-a-dropbox-like-file-sharing-site-with-ruby-on-rails--net-17940).
 
 Users can create folders and upload files.
 
