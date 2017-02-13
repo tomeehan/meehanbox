@@ -56,9 +56,36 @@ My Files
       </tr>
     </thead>
     <tbody>
+      <% @folders.each do |folder| %>
+      <tr>
+        <td>
+          <%= link_to folder_path(folder) do %>
+            <i class="fa fa-folder" aria-hidden="true"></i>  
+            <%= folder.name %>
+          <% end %>
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </th>
+       </tr> 
+      <% end %>
       <% @assets.each do |asset| %>
         <tr>
-          <td><%= link_to asset.uploaded_file_file_name, asset.uploaded_file.url %></td>
+          <td>
+            <%= link_to asset.uploaded_file.url do %>
+              <i class="fa fa-file-o" aria-hidden="true"></i>
+              <%= asset.uploaded_file_file_name %>
+            <% end %>
+          </td>
           <td>
             <%= number_to_human_size(asset.uploaded_file_file_size, precision: 2) %>
           </td>

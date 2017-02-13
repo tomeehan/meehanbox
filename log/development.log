@@ -5235,3 +5235,282 @@ Migrating to CreateFolders (20170213003717)
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6968714591845245855)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-02-13 00:59:35 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 5.3ms)
+
+
+  
+NameError (undefined local variable or method `acts_as_tree' for #<Class:0x007fa0898bb330>):
+  
+app/models/folder.rb:4:in `<class:Folder>'
+app/models/folder.rb:1:in `<top (required)>'
+app/controllers/home_controller.rb:5:in `index'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.0ms)
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:00:51 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (7.2ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.5ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (60.4ms)
+Completed 200 OK in 5735ms (Views: 5659.0ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/folders" for 127.0.0.1 at 2017-02-13 01:01:05 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:FoldersController> at /Users/ThomasMeehan/Desktop/storage/app/controllers/folders_controller.rb:3)
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.2ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered folders/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 112ms (Views: 101.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/folders/new" for 127.0.0.1 at 2017-02-13 01:01:07 +0000
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering folders/new.html.erb within layouts/application
+  Rendered folders/_form.html.erb (18.8ms)
+  Rendered folders/new.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 135ms (Views: 107.1ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/folders" for 127.0.0.1 at 2017-02-13 01:01:10 +0000
+Processing by FoldersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K1rQ9Cnmxdk+sM4N5owQl2jDfpNVPhclTQLepU351U1lAQHBRX/vf/1bj8wFmMhVQ1th3DCSGjEAoDK/hLhH/Q==", "folder"=>{"name"=>"New Folder"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.9ms)[0m  [1m[32mINSERT INTO "folders" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "New Folder"], ["user_id", 2], ["created_at", 2017-02-13 01:01:10 UTC], ["updated_at", 2017-02-13 01:01:10 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/folders/1
+Completed 302 Found in 24ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/folders/1" for 127.0.0.1 at 2017-02-13 01:01:10 +0000
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFolder Load (0.2ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."user_id" = $1 AND "folders"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendering folders/show.html.erb within layouts/application
+  Rendered folders/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 88ms (Views: 82.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-13 01:01:12 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 96ms (Views: 87.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:01:13 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.5ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.5ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 106ms (Views: 94.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:01:53 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 91ms (Views: 85.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:02:28 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/ThomasMeehan/Desktop/storage/app/views/home/index.html.erb:120: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/home/index.html.erb:120: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.2ms)
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:02:43 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 90ms (Views: 83.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:03:17 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 83ms (Views: 75.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/folders/1" for 127.0.0.1 at 2017-02-13 01:03:26 +0000
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."user_id" = $1 AND "folders"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendering folders/show.html.erb within layouts/application
+  Rendered folders/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 71ms (Views: 61.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/folders/1" for 127.0.0.1 at 2017-02-13 01:04:01 +0000
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFolder Load (0.5ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."user_id" = $1 AND "folders"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendering folders/show.html.erb within layouts/application
+  Rendered folders/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 88ms (Views: 79.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/asset" for 127.0.0.1 at 2017-02-13 01:04:03 +0000
+Processing by AssetsController#index as HTML
+  [1m[36mUser Load (63.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering assets/index.html.erb within layouts/application
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:04:03 +0000
+  [1m[36mAsset Load (58.5ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35m (18.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered assets/index.html.erb within layouts/application (87.1ms)
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (13.1ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (8.6ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 170ms (Views: 139.8ms | ActiveRecord: 24.4ms)
+
+
+Completed 200 OK in 446ms (Views: 296.9ms | ActiveRecord: 140.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:04:17 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 89ms (Views: 81.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:04:30 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 73ms (Views: 67.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:05:28 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 79ms (Views: 73.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:06:18 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.7ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.6ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 91ms (Views: 82.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:07:17 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.6ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 95ms (Views: 87.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:08:54 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 3697ms (Views: 3690.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:09:22 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 3540ms (Views: 3531.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 01:09:34 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 ORDER BY name desc[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 3842ms (Views: 3834.6ms | ActiveRecord: 1.3ms)
+
+
