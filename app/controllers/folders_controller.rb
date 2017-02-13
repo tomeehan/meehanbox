@@ -55,7 +55,7 @@ class FoldersController < ApplicationController
 
   # PATCH/PUT /folders/1
   # PATCH/PUT /folders/1.json
-  def update
+  def updatecreate_sucsessful
     @folder = current_user.folders.find(params[:id])
     respond_to do |format|
       if @folder.update(folder_params)

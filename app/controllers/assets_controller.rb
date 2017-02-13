@@ -29,9 +29,9 @@ class AssetsController < ApplicationController
       if @asset.save!
         format.json { render :show, status: :created, location: @asset }
         if @asset.folder
-          format.html { redirect_to browse_path(@asset.folder), notice: t('file.notice.create_sucessful') }
+          format.html { redirect_to browse_path(@asset.folder), notice: t('file.notice.create_successful') }
         else
-          format.html { redirect_to root_path, notice: t('file.notice.create_sucessful') }
+          format.html { redirect_to root_path, notice: t('file.notice.create_successful') }
         end
       else
         format.html { render :new }
