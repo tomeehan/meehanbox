@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dropbox clone built with Rails 5, Bootstrap 4 and Amazon S3. 
 
-Things you may want to cover:
+Users can create folders and upload files.
 
-* Ruby version
+![](http://tom-meehan.com/wp-content/uploads/2017/02/MeehanBoxScreen.jpg)
 
-* System dependencies
 
-* Configuration
+## TODO 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [ ] Rename folders
+- [ ] Upload PDF's, MS Office, iWork, Adobe CC filetypes.
+- [ ] Shared folders
