@@ -23,68 +23,68 @@ en:
   helpers:
     label: 
       folder:
-        name: " LOCAL Folder name" # When creating new folders
+        name: "Folder name" # When creating new folders
       file:
-        name: " LOCAL File"  
+        name: "File"  
   nav:
-    login: " LOCAL Log in"
-    sign_up: " LOCAL Sign up"
-    my_files: " LOCAL My Files"
-    sign_out: " LOCAL Sign out"
+    login: "Log in"
+    sign_up: "Sign up"
+    my_files: "My Files"
+    sign_out: "Sign out"
   home:
     logged_out:
-      welcome_to_meehanbox: " LOCAL Welcome to MeehanBox"
-      subtitle: " LOCAL Simple cloud storage for Meehan's worldwide"
-      get_started: " LOCAL Get started:"
-      login: " LOCAL Log in"
-      sign_up: " LOCAL Sign up"
+      welcome_to_meehanbox: "Welcome to MeehanBox"
+      subtitle: "Simple cloud storage for Meehan's worldwide"
+      get_started: "Get started:"
+      login: "Log in"
+      sign_up: "Sign up"
       features:
-        features: " LOCAL Features"
-        upload_files: " LOCAL Upload files"
-        download_files: " LOCAL Download files"
-        create_folders: " LOCAL Create folders"
+        features: "Features"
+        upload_files: "Upload files"
+        download_files: "Download files"
+        create_folders: "Create folders"
       github_card:
-        header: " LOCAL MeehanBox on GitHub"
-        text: " LOCAL MeehanBox was built with Rails 5, using AWS S3, Paperclip, Devise, PostgreSQL and Bootstrap 4 (Alpha)."
-        btn: " LOCAL GitHub"
+        header: "MeehanBox on GitHub"
+        text: "MeehanBox was built with Rails 5, using AWS S3, Paperclip, Devise, PostgreSQL and Bootstrap 4 (Alpha)."
+        btn: "GitHub"
     logged_in:
-      my_files: " LOCAL My Files" # on breadcumbs partial.
+      my_files: "My Files" # on breadcumbs partial.
       table:
-        name: " LOCAL Name" # File or folder name
-        size: " LOCAL Size" # File size (i.e. 10mb)
-        uploaded_at: " LOCAL Uploaded at"
-        actions: " LOCAL Actions"
-      new_folder: " LOCAL New Folder" # button (i.e. create 'new folder')
-      new_file: " LOCAL Upload File" # button 
-      empty_folder_top: " LOCAL Hey, %{username} it looks like you don't have any files!"
-      empty_folder_bottom: " LOCAL Click that blue button below to upload something."
-      confirm_delete_file: " LOCAL Are you sure?"
-      confirm_delete_folder: " LOCAL Are you sure you want to delete this folder and everything inside?"
+        name: "Name" # File or folder name
+        size: "Size" # File size (i.e. 10mb)
+        uploaded_at: "Uploaded at"
+        actions: "Actions"
+      new_folder: "New Folder" # button (i.e. create 'new folder')
+      new_file: "Upload File" # button 
+      empty_folder_top: "Hey, %{username} it looks like you don't have any files!"
+      empty_folder_bottom: "Click that blue button below to upload something."
+      confirm_delete_file: "Are you sure?"
+      confirm_delete_folder: "Are you sure you want to delete this folder and everything inside?"
   folder:
     # TODO Rename Folder
     new:
       # see helpers: label: folder: name: (line ~26) for form inputs.
-      new_folder: " LOCAL New Folder" # page title
-      create_folder: " LOCAL Create Folder" # button (i.e. 'create this new folder')
-      back_to_my_files: " LOCAL Back to 'My Files'"
-      back_to_folder: " LOCAL Back to %{folder_name}"
+      new_folder: "New Folder" # page title
+      create_folder: "Create Folder" # button (i.e. 'create this new folder')
+      back_to_my_files: "Back to 'My Files'"
+      back_to_folder: "Back to %{folder_name}"
     notice: # these are the green or red confirmation messages.
-      create_successful: " LOCAL Folder was successfully created." # when creating new folders
-      update_successful: " LOCAL Folder was successfully updated." # when renaming/moving folders
-      delete_successful: " LOCAL Folder was successfully deleted." # when deleting folders
-      not_your_folder: " LOCAL Whoa there! Careful now, that's not yours!" # When a sneaky user tries to access another users folder.
+      create_successful: "Folder was successfully created." # when creating new folders
+      update_successful: "Folder was successfully updated." # when renaming/moving folders
+      delete_successful: "Folder was successfully deleted." # when deleting folders
+      not_your_folder: "Whoa there! Careful now, that's not yours!" # When a sneaky user tries to access another users folder.
   file: 
     new:
       # see helpers: label: file: name: (line ~28) for "Form" above input.
       # "Choose file" and "No file chosen" are translated by the users browser.
-      upload_file: " LOCAL Upload file" # page title
-      upload: " LOCAL Upload" # button (i.e. Upload this file)
-      back_to_my_files: " LOCAL Back to 'My Files'"
-      back_to_folder: " LOCAL Back to %{folder_name}"
+      upload_file: "Upload file" # page title
+      upload: "Upload" # button (i.e. Upload this file)
+      back_to_my_files: "Back to 'My Files'"
+      back_to_folder: "Back to %{folder_name}"
     notice: # these are the green or red confirmation messages.
-      create_successful: " LOCAL File was successfully created." # when creating new files
-      update_successful: " LOCAL File was successfully updated." # when renaming/moving files
-      delete_successful: " LOCAL File was successfully deleted." # when deleting files
+      create_successful: "File was successfully created." # when creating new files
+      update_successful: "File was successfully updated." # when renaming/moving files
+      delete_successful: "File was successfully deleted." # when deleting files
 
 
 
