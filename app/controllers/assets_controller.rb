@@ -37,9 +37,9 @@ class AssetsController < ApplicationController
       if @asset.save
         format.json { render :show, status: :created, location: @asset }
         if @asset.folder
-          format.html { redirect_to browse_path(@asset.folder) , notice: 'Asset was successfully created.' }
+          format.html { redirect_to browse_path(@asset.folder) , notice: 'File was successfully created.' }
         else
-          format.html { redirect_to root_path, notice: 'Asset was successfully created.' }
+          format.html { redirect_to root_path, notice: 'File was successfully created.' }
         end
       else
         format.html { render :new }
@@ -53,7 +53,7 @@ class AssetsController < ApplicationController
   def update
     respond_to do |format|
       if @asset.update(asset_params)
-        format.html { redirect_to assets_path, notice: 'Asset was successfully updated.' }
+        format.html { redirect_to assets_path, notice: 'File was successfully updated.' }
         format.json { render :show, status: :ok, location: @asset }
       else
         format.html { render :edit }
@@ -65,9 +65,17 @@ class AssetsController < ApplicationController
   # DELETE /assets/1
   # DELETE /assets/1.json
   def destroy
+    @asset = current_user.assets.find(params[:id])
+    @parent_folder = @asset.folder # get parent folder before deleting record
     @asset.destroy
+
     respond_to do |format|
-      format.html { redirect_to assets_url, notice: 'Asset was successfully destroyed.' }
+      # redirect to parent folder
+      if @parent_folder
+        format.html { redirect_to browse_path(@parent_folder), notice: 'File was successfully deleted.' }
+      else
+        format.html { redirect_to root_path, notice: 'File was successfully deleted.' }
+      end
       format.json { head :no_content }
     end
   end
