@@ -5702,3 +5702,93 @@ Migrating to AddFolderIdToAssets (20170213012347)
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6968714591845245855)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/browse/5/rename" for 127.0.0.1 at 2017-02-13 04:30:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:FoldersController> at /Users/ThomasMeehan/Desktop/storage/app/controllers/folders_controller.rb:3)
+Processing by FoldersController#edit as HTML
+  Parameters: {"folder_id"=>"5"}
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 34ms (ActiveRecord: 5.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Folder with 'id'=):
+  
+app/controllers/folders_controller.rb:93:in `set_folder'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (82.4ms)
+Started GET "/" for 127.0.0.1 at 2017-02-13 04:30:53 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_breadcrumbs.html.erb (0.9ms)
+  [1m[36mFolder Load (0.5ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 AND "folders"."parent_id" IS NULL[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.7ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 AND (folder_id is NULL) ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (68.6ms)
+Completed 200 OK in 629ms (Views: 559.5ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/browse/5/rename" for 127.0.0.1 at 2017-02-13 04:30:58 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:FoldersController> at /Users/ThomasMeehan/Desktop/storage/app/controllers/folders_controller.rb:3)
+Processing by FoldersController#edit as HTML
+  Parameters: {"folder_id"=>"5"}
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT  "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 7ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Folder with 'id'=):
+  
+app/controllers/folders_controller.rb:93:in `set_folder'
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/ThomasMeehan/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.0ms)
+Started GET "/" for 127.0.0.1 at 2017-02-13 04:31:03 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_breadcrumbs.html.erb (0.5ms)
+  [1m[36mFolder Load (0.5ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 AND "folders"."parent_id" IS NULL[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.7ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 AND (folder_id is NULL) ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 84ms (Views: 74.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 04:32:32 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_breadcrumbs.html.erb (0.5ms)
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 AND "folders"."parent_id" IS NULL[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.7ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 AND (folder_id is NULL) ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 77ms (Views: 68.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 04:33:28 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_breadcrumbs.html.erb (0.5ms)
+  [1m[36mFolder Load (0.5ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1 AND "folders"."parent_id" IS NULL[0m  [["user_id", 2]]
+  [1m[36mAsset Load (0.8ms)[0m  [1m[34mSELECT "assets".* FROM "assets" WHERE "assets"."user_id" = $1 AND (folder_id is NULL) ORDER BY uploaded_file_file_name desc[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets" WHERE "assets"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered home/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 85ms (Views: 75.9ms | ActiveRecord: 2.6ms)
+
+

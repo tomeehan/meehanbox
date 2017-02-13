@@ -27,8 +27,9 @@ class FoldersController < ApplicationController
 
   # GET /folders/1/edit
   def edit
-    @folder = current_user.folders.find(params[:folder_id])
+    @folder = current_user.folders.find(params[:folder_id]) 
     @current_folder = @folder.parent
+    # TODO: "Couldn't find Folder with 'id'="
   end
 
   # POST /folders
