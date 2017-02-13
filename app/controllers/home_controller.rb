@@ -15,7 +15,7 @@ class HomeController < ApplicationController
 			@assets = @current_folder.assets.order("uploaded_file_file_name desc")
 			render :action => "index"
 		else
-			flash[:error] = "Whoa there! That's not your folder!"
+			flash[:error] = t('folder.notice.not_your_folder')
 			redirect_to root_path
 		end
 	end

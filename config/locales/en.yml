@@ -29,6 +29,8 @@ en:
   nav:
     login: "Log in"
     sign_up: "Sign up"
+    my_files: "My Files"
+    sign_out: "Sign out"
   home:
     logged_out:
       welcome_to_meehanbox: "Welcome to MeehanBox"
@@ -66,6 +68,11 @@ en:
       create_folder: "Create Folder" # button (i.e. 'create this new folder')
       back_to_my_files: "Back to 'My Files'"
       back_to_folder: "Back to %{folder_name}"
+    notice: # these are the green or red confirmation messages.
+      create_sucessful: "Folder was successfully created." # when creating new folders
+      update_sucessful: "Folder was successfully updated." # when renaming/moving folders
+      delete_successful: "Folder was successfully deleted." # when deleting folders
+      not_your_folder: "Whoa there! Careful now, that's not yours!" # When a sneaky user tries to access another users folder.
   file: 
     new:
       # see helpers: label: file: name: (line ~28) for "Form" above input.
@@ -74,6 +81,12 @@ en:
       upload: "Upload" # button (i.e. Upload this file)
       back_to_my_files: "Back to 'My Files'"
       back_to_folder: "Back to %{folder_name}"
+    notice: # these are the green or red confirmation messages.
+      create_sucessful: "File was successfully created." # when creating new files
+      update_sucessful: "File was successfully updated." # when renaming/moving files
+      delete_successful: "File was successfully deleted." # when deleting files
+
+
 
 
 

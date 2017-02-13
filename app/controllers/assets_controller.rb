@@ -29,9 +29,9 @@ class AssetsController < ApplicationController
       if @asset.save!
         format.json { render :show, status: :created, location: @asset }
         if @asset.folder
-          format.html { redirect_to browse_path(@asset.folder) , notice: 'File was successfully created.' }
+          format.html { redirect_to browse_path(@asset.folder), notice: t('file.notice.create_sucessful') }
         else
-          format.html { redirect_to root_path, notice: 'File was successfully created.' }
+          format.html { redirect_to root_path, notice: t('file.notice.create_sucessful') }
         end
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AssetsController < ApplicationController
   def update
     respond_to do |format|
       if @asset.update(asset_params)
-        format.html { redirect_to assets_path, notice: 'File was successfully updated.' }
+        format.html { redirect_to assets_path, notice: t('file.notice.update_successful') }
         format.json { render :show, status: :ok, location: @asset }
       else
         format.html { render :edit }
@@ -60,9 +60,9 @@ class AssetsController < ApplicationController
     respond_to do |format|
       # redirect to parent folder
       if @parent_folder
-        format.html { redirect_to browse_path(@parent_folder), notice: 'File was successfully deleted.' }
+        format.html { redirect_to browse_path(@parent_folder), notice: t('file.notice.delete_successful') }
       else
-        format.html { redirect_to root_path, notice: 'File was successfully deleted.' }
+        format.html { redirect_to root_path, notice: t('file.notice.delete_successful') }
       end
       format.json { head :no_content }
     end
@@ -81,7 +81,7 @@ class AssetsController < ApplicationController
       #redirect to amazon S3 url which will let the user download the file automatically 
       #redirect_to asset.uploaded_file.url, :type => asset.uploaded_file_content_type 
     else
-      flash[:error] = "Careful now! Those aren't yours."
+      flash[:error] = t('folder.notice.not_your_folder')
       redirect_to root_url 
     end
   end

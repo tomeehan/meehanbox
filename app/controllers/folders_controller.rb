@@ -42,9 +42,9 @@ class FoldersController < ApplicationController
         format.json { render :show, status: :created, location: @folder }
 
         if @folder.parent
-          format.html { redirect_to browse_path(@folder.parent) }
+          format.html { redirect_to browse_path(@folder.parent), notice: t('folder.notice.create_successful') }
         else
-          format.html { redirect_to root_path }
+          format.html { redirect_to root_path, notice: t('folder.notice.create_successful') }
         end
       else
         format.html { render :new }
@@ -59,7 +59,7 @@ class FoldersController < ApplicationController
     @folder = current_user.folders.find(params[:id])
     respond_to do |format|
       if @folder.update(folder_params)
-        format.html { redirect_to @folder, notice: 'Folder was successfully updated.' }
+        format.html { redirect_to @folder, notice: t('folder.notice.update_successful') }
         format.json { render :show, status: :ok, location: @folder }
       else
         format.html { render :edit }
@@ -79,9 +79,9 @@ class FoldersController < ApplicationController
     # redirect to relevent folder
     respond_to do |format|
       if @parent_folder
-        format.html { redirect_to browse_path(@parent_folder), notice: 'Folder was successfully deleted.' }
+        format.html { redirect_to browse_path(@parent_folder), notice: t('folder.notice.delete_successful') }
       else
-        format.html { redirect_to root_path, notice: 'Folder was successfully deleted.' }
+        format.html { redirect_to root_path, notice: t('folder.notice.delete_successful') }
       end
       format.json { head :no_content }
     end

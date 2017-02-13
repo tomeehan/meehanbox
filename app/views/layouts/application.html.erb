@@ -19,8 +19,12 @@
 		    <div class="navbar navbar-brand mr-auto"></div>
 		    <div class="navbar-nav">
 		      <% if user_signed_in? %>
-		      		<%= link_to "My Files", root_path, class: 'nav-item nav-link' %>
-					<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
+		      		<%= link_to root_path, class: 'nav-item nav-link' do %>
+		      			<%= t "nav.my_files"%>
+		      		<% end %>
+					<%= link_to destroy_user_session_path, method: :delete, class: 'nav-item nav-link' do %>
+						<%= t "nav.sign_out" %>
+					<% end %>
 				<% else %>
 					<%= link_to new_user_session_path, class: 'nav-item nav-link' do %>
 						<%= t "nav.login" %>
