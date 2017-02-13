@@ -40,5 +40,17 @@ en:
         text: "MeehanBox was built with Rails 5, using AWS S3, Paperclip, Devise, PostgreSQL and Bootstrap 4 (Alpha)."
         btn: "GitHub"
     logged_in:
-      
+      my_files: "My Files" # on breadcumbs partial.
+      table:
+        name: "Name" # File or folder name
+        size: "Size" # File size (i.e. 10mb)
+        uploaded_at: "Uploaded at"
+        actions: "Actions"
+      new_folder: "New Folder" # button (i.e. create 'new folder')
+      new_file: "Upload File" # button 
+      empty_folder_top: "Hey, %{username} it looks like you don't have any files!"
+      empty_folder_bottom: "Click that blue button below to upload something."
+      confirm_delete_file: "Are you sure?"
+      confirm_delete_folder: "Are you sure you want to delete this folder and everything inside?"
+
 

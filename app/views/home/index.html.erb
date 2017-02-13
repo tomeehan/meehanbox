@@ -59,10 +59,18 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Size</th>
-        <th>Uploaded At</th>
-        <th>Actions</th>
+        <th>
+          <%= t "home.logged_in.table.name" %>
+        </th>
+        <th>
+          <%= t "home.logged_in.table.size" %>
+        </th>
+        <th>
+          <%= t "home.logged_in.table.uploaded_at" %>
+        </th>
+        <th>
+          <%= t "home.logged_in.table.actions" %>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -87,7 +95,7 @@
           <%= link_to do %>
           <i class="fa fa-share-square-o" aria-hidden="true"></i>
           <% end %>          
-          <%= link_to folder, method: :delete, data: { confirm: 'Are you sure to delete the folder and all of its contents?' } do %>
+          <%= link_to folder, method: :delete, data: { confirm: I18n.t("home.logged_in.confirm_delete_folder")  } do %>
             <i class="fa fa-trash "></i> 
            <% end %>
         </td>
@@ -109,7 +117,7 @@
             <%= link_to download_url(asset) do %>
               <i class="fa fa-download "></i> 
             <% end %>
-            <%= link_to asset, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <%= link_to asset, method: :delete, data: { confirm: I18n.t("home.logged_in.confirm_delete_file")  } do %>
               <i class="fa fa-trash "></i> 
              <% end %>
           </td>
@@ -124,9 +132,9 @@
       <br>
       <br>
       <br>
-      Hey, <%= current_user.name %> it looks like you don't have any files! 
+      <%= t("home.logged_in.empty_folder_top", :username => current_user.name) %>
       <br>
-      Click that blue button below to upload something.
+      <%= t("home.logged_in.empty_folder_bottom", :username => current_user.name) %>
     </p>
   </div>
   <% end %>
@@ -135,16 +143,16 @@
   <% if @current_folder %>
     <%= link_to new_sub_file_path(@current_folder), class: 'btn btn-primary' do %>
       <i class="fa fa-upload "></i>
-      Upload file
+      <%= t "home.logged_in.new_file" %>
     <% end %>    
     <%= link_to new_sub_folder_path(@current_folder), class: 'btn btn-secondary' do %>
       <i class="fa fa-folder" aria-hidden="true"></i>
-      New Folder
+      <%= t "home.logged_in.new_folder" %>
     <% end %>
   <% else %>
     <%= link_to new_folder_path, class: 'btn btn-secondary' do %>
       <i class="fa fa-folder" aria-hidden="true"></i>
-      New Folder
+      <%= t "home.logged_in.new_folder" %>
     <% end %>
   <% end %>  
 

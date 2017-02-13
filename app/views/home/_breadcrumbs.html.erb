@@ -1,11 +1,13 @@
 <div class="breadcrumbs">
 	<% if @current_folder # are we in a folder? %>
-		<%= link_to "My Files", root_url %>
+		<%= link_to root_url do %>
+			<%= t "home.logged_in.my_files" %>
+		<% end %>
 		<% @current_folder.ancestors.reverse.each do |folder| %>
 			/ <%= link_to folder.name, browse_path(folder) %>
 		<% end %>
 		/ <%= @current_folder.name %>
 	<% else # we aren't in any folder. %>
-		My Files
+		<%= t "home.logged_in.my_files" %>
 	<% end %>
 </div>
