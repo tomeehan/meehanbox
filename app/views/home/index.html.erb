@@ -59,7 +59,7 @@ My Files
       <% @folders.each do |folder| %>
       <tr>
         <td>
-          <%= link_to folder_path(folder) do %>
+          <%= link_to browse_path(folder) do %>
             <i class="fa fa-folder" aria-hidden="true"></i>  
             <%= folder.name %>
           <% end %>
