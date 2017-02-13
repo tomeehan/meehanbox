@@ -7519,3 +7519,17 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 63ms (Views: 60.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-02-13 18:22:43 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 112ms (Views: 109.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-13 18:22:47 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 100ms (Views: 97.3ms | ActiveRecord: 0.0ms)
+
+
