@@ -2,8 +2,8 @@ class HomeController < ApplicationController
 
 	def index
 		if user_signed_in? 
-			@folders = current_user.folders.order("name desc")   
-      		@assets = current_user.assets.order("uploaded_file_file_name desc")       
+			@folders = current_user.folders.roots
+      		@assets = current_user.assets.where("folder_id is NULL").order("uploaded_file_file_name desc")
     	end
 	end
 	
