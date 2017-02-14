@@ -9,13 +9,11 @@
             <div class="form-group">
               <%= f.label :name %><br />
               <%= f.text_field :name, autofocus: true, class: "form-control" %>
-              <br>
             </div>
   
             <div class="form-group">
               <%= f.label :email %><br />
               <%= f.email_field :email, autofocus: true, class: "form-control" %>
-              <br>
             </div>
   
             <div class="form-group">
@@ -24,13 +22,11 @@
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
               <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-              <br>
             </div>
   
             <div class="form-group">
               <%= f.label :password_confirmation %><br />
               <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-              <br>
             </div>
   
             <div class="actions">
