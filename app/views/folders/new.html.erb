@@ -1,19 +1,23 @@
-<div class="card-header">
-	<%= t "folder.new.new_folder" %>
-</div>
-
-<div class="container">
-	<%= render 'form', folder: @folder %>
-</div>
-
-<div class="card-footer">
-	<% if @folder.parent %> 
-	   <%= link_to browse_path(@folder.parent), class: 'btn btn-secondary' do %>		
-	   <%= t("folder.new.back_to_folder", :folder_name => @folder.parent.name) %>
-	   <% end %>
-	<% else %> 
-		<%= link_to root_url, class: 'btn btn-secondary' do %>	
-	  	<%= t "folder.new.back_to_my_files" %>
-	  <% end %>	
-	<% end %>
+<div class="col-md-6 offset-md-3">
+	<div class="card">
+		<div class="card-header">
+			<%= t "folder.new.new_folder" %>
+		</div>
+		
+		<div class="container">
+			<%= render 'form', folder: @folder %>
+		</div>
+		
+		<div class="card-footer">
+			<% if @folder.parent %> 
+			   <%= link_to browse_path(@folder.parent), class: 'btn btn-secondary' do %>		
+			   <%= t("folder.new.back_to_folder", :folder_name => @folder.parent.name) %>
+			   <% end %>
+			<% else %> 
+				<%= link_to root_url, class: 'btn btn-secondary' do %>	
+			  	<%= t "folder.new.back_to_my_files" %>
+			  <% end %>	
+			<% end %>
+		</div>
+	</div>
 </div>
