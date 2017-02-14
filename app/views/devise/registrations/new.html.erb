@@ -8,12 +8,22 @@
   
             <div class="form-group">
               <%= f.label :name %><br />
-              <%= f.text_field :name, autofocus: true, class: "form-control" %>
+                <div class="input-group">
+                  <%= f.text_field :name, autofocus: true, class: "form-control" %>
+                  <div class="input-group-addon">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                  </div>
+                </div>
             </div>
   
             <div class="form-group">
               <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                <div class="input-group">
+                  <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                  <div class="input-group-addon">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </div>
+                </div>
             </div>
   
             <div class="form-group">
@@ -21,12 +31,22 @@
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
-              <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                <div class="input-group">
+                  <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                  <div class="input-group-addon">
+                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                  </div>
+              </div>
             </div>
   
             <div class="form-group">
               <%= f.label :password_confirmation %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+              <div class="input-group">
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+                <div class="input-group-addon">
+                  <i class="fa fa-lock" aria-hidden="true"></i>
+                </div>
+              </div>
             </div>
   
             <div class="actions">

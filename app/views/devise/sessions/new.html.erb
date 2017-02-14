@@ -9,12 +9,22 @@
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-group">
               <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                <div class="input-group">
+                  <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                  <div class="input-group-addon">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </div>
+                </div>
             </div>
   
             <div class="form-group">
               <%= f.label :password %><br />
-              <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                <div class="input-group">
+                  <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                <div class="input-group-addon">
+                  <i class="fa fa-lock" aria-hidden="true"></i>
+                </div>
+              </div>
             </div>
   
             <% if devise_mapping.rememberable? -%>

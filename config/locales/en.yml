@@ -28,6 +28,8 @@ en:
         password: "Password"
         password_confirmation: "Password confirmation"
         current_password: "Current password"
+      asset:
+        uploaded_file: "File"
   helpers:
     label: 
       folder:
