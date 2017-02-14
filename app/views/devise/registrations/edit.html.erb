@@ -21,20 +21,29 @@
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div><%= t "user.edit.awaiting_confirmation" %>: <%= resource.unconfirmed_email %></div>
           <% end %>
-  
-          <div class="form-group">
-            <%= f.label :password %> <i>(<%= t "user.edit.password.leave_blank" %>)</i><br />
-            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-            <% if @minimum_password_length %>
-              <br />
-              <em><%= @minimum_password_length %> <%= t "user.edit.password.characters_minimum" %></em>
-            <% end %>
-          </div>
-  
-          <div class="form-group">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-          </div>
+
+          <p class="change-password">
+            <a data-toggle="collapse" data-target="#demo" class="link">Change my password</a>
+          </p>
+
+          <div id="demo" class="collapse">
+            <div class="change-password-body">
+              <h3>New Password:</h3>
+              <div class="form-group">
+                <%= f.label :password %> <i>(<%= t "user.edit.password.leave_blank" %>)</i><br />
+                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                <% if @minimum_password_length %>
+                  <br />
+                  <em><%= @minimum_password_length %> <%= t "user.edit.password.characters_minimum" %></em>
+                <% end %>
+              </div>
+      
+              <div class="form-group">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+              </div>
+            </div>  
+          </div>  
   
           <div class="form-group">
             <%= f.label :current_password %> <i>(<%= t "user.edit.password.confirm_changes" %>)</i><br />

@@ -107,7 +107,7 @@ en:
       password:
         characters_minimum: "characters minimum" # "ie password should be '6 character minimum'"
         leave_blank: "leave blank if you don't want to change it" # sits inside brackets
-        confirm_changes: "we need your sa password to confirm your changes" # sides inside brackets
+        confirm_changes: "we need your current password to confirm your changes" # sides inside brackets
     delete:
       unhappy: "Unhappy?"
       cancel_my_account: "Cancel my account"

@@ -91,6 +91,20 @@ nav .navbar-brand {
 	width: 50px;
 }
 
+.change-password {
+	color: blue;
+	cursor: pointer;
+}
+
+.change-password:hover {
+	text-decoration: underline;
+}
+
+.change-password-body {
+	background: #f2f2f2;
+	padding: 10px;
+}
+
 footer {
 	position: absolute;
 	margin-top: 25px;
