@@ -37,8 +37,6 @@ nav .navbar-brand {
 
 .card input {
   width: 100%;
-  height: 40px;
-  margin-bottom: 20px;
 }
 
 .card input:focus {
@@ -85,35 +83,9 @@ nav .navbar-brand {
 	text-align: right;
 }
 
-#test {
-    position: relative;
-}
-
-#test .wrapper {
-    opacity: 0;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    z-index: 2;
-}
-
-#test .wrapper:hover {
-    opacity: 0.5;
-}
-
-#test button {
-    background-color: #ccc;
-    border: none;
-    color: #666;
-    padding: 3px 5px;
-    border-radius: 5px;
-    position: relative;
-    top: 0;
-    z-index: 1;
-}
 
 footer {
-   position:absolute;
+   margin-top: 100px;
    bottom:0;
    width:100%;
    height:60px;   /* Height of the footer */
