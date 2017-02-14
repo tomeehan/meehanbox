@@ -52,111 +52,113 @@
 </div>
 <% else %>
  
-<div class="card-header">
-<%= render :partial => "breadcrumbs" %>
-</div>
-<div class="container">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>
-          <%= t "home.logged_in.table.name" %>
-        </th>
-        <th>
-          <%= t "home.logged_in.table.size" %>
-        </th>
-        <th>
-          <%= t "home.logged_in.table.uploaded_at" %>
-        </th>
-        <th>
-          <%= t "home.logged_in.table.actions" %>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @folders.each do |folder| %>
-      <tr>
-        <td>
-          <%= link_to browse_path(folder) do %>
-            <i class="fa fa-folder" aria-hidden="true"></i>  
-            <%= folder.name %>
+  <div class="card">
+    <div class="card-header">
+    <%= render :partial => "breadcrumbs" %>
+    </div>
+    <div class="container">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>
+              <%= t "home.logged_in.table.name" %>
+            </th>
+            <th>
+              <%= t "home.logged_in.table.size" %>
+            </th>
+            <th>
+              <%= t "home.logged_in.table.uploaded_at" %>
+            </th>
+            <th>
+              <%= t "home.logged_in.table.actions" %>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @folders.each do |folder| %>
+          <tr>
+            <td>
+              <%= link_to browse_path(folder) do %>
+                <i class="fa fa-folder" aria-hidden="true"></i>  
+                <%= folder.name %>
+              <% end %>
+            </td>
+            <td>
+              -
+            </td>
+            <td>
+              -
+            </td>
+            <td class="actions">
+              <%= link_to rename_folder_path(folder) do %>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <% end %>
+              <%= link_to do %>
+              <i class="fa fa-share-square-o" aria-hidden="true"></i>
+              <% end %>          
+              <%= link_to folder, method: :delete, data: { confirm: I18n.t("home.logged_in.confirm_delete_folder")  } do %>
+                <i class="fa fa-trash "></i> 
+               <% end %>
+            </td>
+           </tr> 
           <% end %>
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          -
-        </td>
-        <td class="actions">
-          <%= link_to rename_folder_path(folder) do %>
-          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          <% @assets.each do |asset| %>
+            <tr>
+              <td>
+                <%= link_to asset.uploaded_file.url do %>
+                  <i class="fa fa-file-o" aria-hidden="true"></i>
+                  <%= asset.uploaded_file_file_name %>
+                <% end %>
+              </td>
+              <td>
+                <%= number_to_human_size(asset.uploaded_file_file_size, precision: 2) %>
+              </td>
+              <td><%= asset.uploaded_file_updated_at %></td>
+              <td class="actions">
+                <%= link_to download_url(asset) do %>
+                  <i class="fa fa-download "></i> 
+                <% end %>
+                <%= link_to asset, method: :delete, data: { confirm: I18n.t("home.logged_in.confirm_delete_file")  } do %>
+                  <i class="fa fa-trash "></i> 
+                 <% end %>
+              </td>
+            </tr>
           <% end %>
-          <%= link_to do %>
-          <i class="fa fa-share-square-o" aria-hidden="true"></i>
-          <% end %>          
-          <%= link_to folder, method: :delete, data: { confirm: I18n.t("home.logged_in.confirm_delete_folder")  } do %>
-            <i class="fa fa-trash "></i> 
-           <% end %>
-        </td>
-       </tr> 
+        </tbody>
+      </table>
+      <% if current_user.assets.count == 0 %>
+      <div class="no-files">
+        <p>
+          <i class="fa fa-frown-o fa-5x"></i>
+          <br>
+          <br>
+          <br>
+          <%= t("home.logged_in.empty_folder_top", :username => current_user.name) %>
+          <br>
+          <%= t("home.logged_in.empty_folder_bottom", :username => current_user.name) %>
+        </p>
+      </div>
       <% end %>
-      <% @assets.each do |asset| %>
-        <tr>
-          <td>
-            <%= link_to asset.uploaded_file.url do %>
-              <i class="fa fa-file-o" aria-hidden="true"></i>
-              <%= asset.uploaded_file_file_name %>
-            <% end %>
-          </td>
-          <td>
-            <%= number_to_human_size(asset.uploaded_file_file_size, precision: 2) %>
-          </td>
-          <td><%= asset.uploaded_file_updated_at %></td>
-          <td class="actions">
-            <%= link_to download_url(asset) do %>
-              <i class="fa fa-download "></i> 
-            <% end %>
-            <%= link_to asset, method: :delete, data: { confirm: I18n.t("home.logged_in.confirm_delete_file")  } do %>
-              <i class="fa fa-trash "></i> 
-             <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <% if current_user.assets.count == 0 %>
-  <div class="no-files">
-    <p>
-      <i class="fa fa-frown-o fa-5x"></i>
-      <br>
-      <br>
-      <br>
-      <%= t("home.logged_in.empty_folder_top", :username => current_user.name) %>
-      <br>
-      <%= t("home.logged_in.empty_folder_bottom", :username => current_user.name) %>
-    </p>
+    </div>
+      <div class="card-footer">
+      <% if @current_folder %>
+        <%= link_to new_sub_file_path(@current_folder), class: 'btn btn-primary' do %>
+          <i class="fa fa-upload "></i>
+          <%= t "home.logged_in.new_file" %>
+        <% end %>    
+        <%= link_to new_sub_folder_path(@current_folder), class: 'btn btn-secondary' do %>
+          <i class="fa fa-folder" aria-hidden="true"></i>
+          <%= t "home.logged_in.new_folder" %>
+        <% end %>
+      <% else %>
+        <%= link_to new_folder_path, class: 'btn btn-secondary' do %>
+          <i class="fa fa-folder" aria-hidden="true"></i>
+          <%= t "home.logged_in.new_folder" %>
+        <% end %>
+      <% end %>  
+    
+    </div>
   </div>
-  <% end %>
-</div>
-  <div class="card-footer">
-  <% if @current_folder %>
-    <%= link_to new_sub_file_path(@current_folder), class: 'btn btn-primary' do %>
-      <i class="fa fa-upload "></i>
-      <%= t "home.logged_in.new_file" %>
-    <% end %>    
-    <%= link_to new_sub_folder_path(@current_folder), class: 'btn btn-secondary' do %>
-      <i class="fa fa-folder" aria-hidden="true"></i>
-      <%= t "home.logged_in.new_folder" %>
-    <% end %>
-  <% else %>
-    <%= link_to new_folder_path, class: 'btn btn-secondary' do %>
-      <i class="fa fa-folder" aria-hidden="true"></i>
-      <%= t "home.logged_in.new_folder" %>
-    <% end %>
-  <% end %>  
-
-</div>
 
 
 <% end %>
