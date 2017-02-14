@@ -1,20 +1,23 @@
-<div class="card-header">
-	<%= t "file.new.upload_file" %>
-</div>
+<div class="col-md-6 offset-md-3">
+	<div class="card">
+		<div class="card-header">
+			<%= t "file.new.upload_file" %>
+		</div>
 
-<div class="container">
-	<%= render 'form', asset: @asset %>		
-</div>
+		<div class="container">
+			<%= render 'form', asset: @asset %>		
+		</div>
 
-<div class="card-footer">
-	<% if @asset.folder %>
-		<%= link_to browse_path(@asset.folder) do %>
-			<%= t("file.new.back_to_folder", :folder_name => @asset.folder.name) %>
-		<% end %>
-	<% else %>
-		<%= link_to 'Back', root_path, class: 'btn btn-secondary' do %>
-			<%= t "file.new.back_to_my_files" %>
-		<% end %>
-	<% end %>
+		<div class="card-footer">
+			<% if @asset.folder %>
+				<%= link_to browse_path(@asset.folder), class: 'btn btn-secondary' do %>
+					<%= t("file.new.back_to_folder", :folder_name => @asset.folder.name) %>
+				<% end %>
+			<% else %>
+				<%= link_to 'Back', root_path, class: 'btn btn-secondary' do %>
+					<%= t "file.new.back_to_my_files" %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
 </div>
-
