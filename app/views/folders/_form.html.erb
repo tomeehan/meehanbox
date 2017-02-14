@@ -10,12 +10,14 @@
       </ul>
     </div>
   <% end %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <br>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
 
     <%= f.hidden_field :parent_id %> 
 
-    <p><%= f.submit t('folder.new.create_folder'), class: 'btn btn-primary' %></p> 
+    <p><%= f.submit t('folder.new.create_folder'), class: 'btn btn-primary btn-lg btn-block' %></p> 
 
 <% end %>
