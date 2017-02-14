@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
     <div class="card form-signin">
-      <h3 class="card-header">My Account</h3>
+      <h3 class="card-header">
+        <%= t "user.edit.my_account" %>
+      </h3>
       <div class="card-block">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= devise_error_messages! %>
@@ -45,6 +47,6 @@
         <% end %>
       </div>
     </div>
-    <p class="cancel-account">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <p class="cancel-account"><%= t "user.delete.unhappy" %> <%= link_to t('user.delete.cancel_my_account'), registration_path(resource_name), data: { confirm: t('user.delete.delete_confirmation') }, method: :delete %></p>
   </div>
 </div>

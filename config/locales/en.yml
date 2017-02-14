@@ -30,7 +30,7 @@ en:
     login: "Log in"
     sign_up: "Sign up"
     my_files: "My Files"
-    my_account: "My Account"
+    my_account: "Account"
     sign_out: "Sign out"
   home:
     logged_out:
@@ -92,7 +92,11 @@ en:
       remember_me: "Remember Me"
       log_in: "Log in"
     edit:
-      my_account: "My Account"      
+      my_account: "My Account" # page title
+    delete:
+      unhappy: "Unhappy?"
+      cancel_my_account: "Cancel my account"
+      delete_confirmation: "Are you sure you want to delete your account?" # confirmation message when deleting account.
 
 
 
