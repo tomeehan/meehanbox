@@ -30,6 +30,7 @@ kn:
     login: "Arghhh Log in"
     sign_up: "Arghhh Sign up"
     my_files: "Arghhh My Files"
+    my_account: "Arghhh My Account"    
     sign_out: "Arghhh Sign out"
   home:
     logged_out:
@@ -85,6 +86,13 @@ kn:
       create_successful: "Arghhh File was successfully created." # when creating new files
       update_successful: "Arghhh File was successfully updated." # when renaming/moving files
       delete_successful: "Arghhh File was successfully deleted." # when deleting files
+  user:
+    session: # user logs in
+      sign_in: "Arghhh Sign In" #
+      remember_me: "Arghhh Remember Me"
+      log_in: "Arghhh Log in"
+    edit:
+      my_account: "Arghhh My Account"
 
 
 

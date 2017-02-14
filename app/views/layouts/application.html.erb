@@ -22,6 +22,9 @@
 		      		<%= link_to root_path, class: 'nav-item nav-link' do %>
 		      			<%= t "nav.my_files"%>
 		      		<% end %>
+		      		<%= link_to edit_user_registration_path, class: 'nav-item nav-link' do %>
+		      			<%= t "nav.my_account"%>
+		      		<% end %>		      		
 					<%= link_to destroy_user_session_path, method: :delete, class: 'nav-item nav-link' do %>
 						<%= t "nav.sign_out" %>
 					<% end %>
